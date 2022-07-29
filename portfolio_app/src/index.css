@@ -6,6 +6,7 @@
   --medium-gray: #808080;
   --highlight: #FFFFFF;
   --shadow: #000000;
+  --white: #FFFFFF;
 }  
 
 * {
@@ -51,11 +52,13 @@
   margin-bottom: 5px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 2px;
+  color: var(--white);
 }
 
 .blank-container {
-  background-color: white;
+  background-color: var(--white);
   flex: 2;
 }
 
@@ -64,6 +67,9 @@
   height: 18px;
   background-color: var(--light-gray);
   margin: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button:active {
@@ -81,4 +87,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.Icon {
+  height: 16px;
 }

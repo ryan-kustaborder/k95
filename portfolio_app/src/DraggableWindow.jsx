@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Icon from "./Icon";
 
 class DraggableWindow extends Component {
   constructor(props) {
@@ -7,9 +8,10 @@ class DraggableWindow extends Component {
       pos: { x: 50, y: 50 },
       dragging: false,
       rel: null,
+      render: true,
     };
 
-    this.inputRef = React.createRef();
+    this.ref = React.createRef();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -23,13 +25,11 @@ class DraggableWindow extends Component {
   }
 
   onMouseDown(e) {
-    console.log(this.inputRef.current.offsetLeft);
     if (e.button !== 0) return;
 
-    //var computedStyle = window.getComputedStyle(this.getDOMNode());
     var pos = {
-      top: parseInt(this.inputRef.current.offsetTop),
-      left: parseInt(this.inputRef.current.offsetLeft),
+      top: parseInt(this.ref.current.offsetTop),
+      left: parseInt(this.ref.current.offsetLeft),
     };
 
     this.setState({
@@ -62,7 +62,17 @@ class DraggableWindow extends Component {
     e.preventDefault();
   }
 
+  hide(e) {
+    this.setState({
+      render: false,
+    });
+  }
+
   render() {
+    if (!this.state.render) {
+      return null;
+    }
+
     var top = this.state.pos.y;
     var left = this.state.pos.x;
 
@@ -70,12 +80,16 @@ class DraggableWindow extends Component {
       <div
         style={{ position: "absolute", top: top + "px", left: left + "px" }}
         className="window out"
-        onMouseDown={this.onMouseDown.bind(this)}
-        ref={this.inputRef}
+        ref={this.ref}
       >
-        <div className="window-header">
+        <div
+          className="window-header"
+          onMouseDown={this.onMouseDown.bind(this)}
+        >
           <p>Window Title</p>
-          <a className="button out"></a>
+          <a className="button out" onClick={this.hide.bind(this)}>
+            <Icon />
+          </a>
         </div>
         <div className="blank-container in"></div>
       </div>
