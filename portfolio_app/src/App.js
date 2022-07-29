@@ -1,9 +1,14 @@
-import DraggableWindow from "./DraggableWindow";
+import DesktopIcon from "./components/DesktopIcon";
+import DraggableWindow from "./components/DraggableWindow";
 
 function App() {
   return (
     <div className="App">
-      <DraggableWindow />
+      <DesktopIcon />
+      <DesktopIcon />
+      <DesktopIcon />
+      <DesktopIcon />
+      <DesktopIcon />
       <div className="footer">
         <a className="button out">Start</a>
         <a className="button in">11:27 p.m.</a>
