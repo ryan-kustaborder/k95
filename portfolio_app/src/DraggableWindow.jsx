@@ -87,9 +87,9 @@ class DraggableWindow extends Component {
           onMouseDown={this.onMouseDown.bind(this)}
         >
           <p>Window Title</p>
-          <a className="button out" onClick={this.hide.bind(this)}>
+          <button className="button out" onClick={this.hide.bind(this)}>
             <Icon />
-          </a>
+          </button>
         </div>
         <div className="blank-container in"></div>
       </div>
