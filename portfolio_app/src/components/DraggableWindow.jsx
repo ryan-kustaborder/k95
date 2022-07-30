@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Icon from "./Icon";
+import CLOSE_ICON from "../images/icons/x.png";
 
 export default class DraggableWindow extends Component {
   constructor(props) {
@@ -88,7 +88,7 @@ export default class DraggableWindow extends Component {
         >
           <p>Window Title</p>
           <button className="button out" onClick={this.hide.bind(this)}>
-            <Icon />
+            <img className="Icon" src={CLOSE_ICON}></img>
           </button>
         </div>
         {this.props.children}

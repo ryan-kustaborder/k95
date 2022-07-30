@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import DraggableWindow from "./DraggableWindow";
-import resize from "../images/icons/resize.png";
 import ResizeWrapper from "./ResizableWrapper";
 
 export default class TextEditorWindow extends Component {
