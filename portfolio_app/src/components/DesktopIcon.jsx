@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import folder from "../images/icons/folder.png";
 import file from "../images/icons/file.png";
-import DraggableWindow from "./DraggableWindow";
+import Window from "./Window";
 
 export default class DesktopIcon extends Component {
   constructor(props) {
@@ -20,9 +20,19 @@ export default class DesktopIcon extends Component {
   }
 
   onCloseWindow() {
+    console.log(this);
     this.setState({
       active: false,
     });
+  }
+
+  getInnerWindow() {
+    return (
+      <Window
+        active={this.state.active}
+        onCloseWindow={this.onCloseWindow.bind(this)}
+      />
+    );
   }
 
   render() {
@@ -37,8 +47,6 @@ export default class DesktopIcon extends Component {
         break;
     }
 
-    console.log(image);
-
     if (this.state.active) {
       return (
         <>
@@ -49,10 +57,7 @@ export default class DesktopIcon extends Component {
             <img src={image}></img>
             <p>This Folder Has A Long Name</p>
           </div>
-          <DraggableWindow
-            active={this.state.active}
-            onCloseWindow={this.onCloseWindow.bind(this)}
-          />
+          {this.getInnerWindow()}
         </>
       );
     } else {

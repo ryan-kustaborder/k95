@@ -1,3 +1,5 @@
+import DesktopIcon from "./components/DesktopIcon";
+import PhotoFileIcon from "./components/PhotoFileIcon";
 import PhotoWindow from "./components/PhotoWindow";
 import TextEditorWindow from "./components/TextEditorWindow";
 import rug from "./images/gallery/rug.jpg";
@@ -5,9 +7,8 @@ import rug from "./images/gallery/rug.jpg";
 function App() {
   return (
     <div className="App">
-      <PhotoWindow title="Photo Window">
-        <img src={rug}></img>
-      </PhotoWindow>
+      <DesktopIcon active={false} icon="FILE" />
+      <PhotoFileIcon active={false} icon="FILE" image={rug} />
 
       <div className="footer">
         <a className="button out">Start</a>
