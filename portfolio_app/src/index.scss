@@ -1,0 +1,165 @@
+:root{
+  --blue: #001080;
+  --greem: #00FF00;
+  --red: #FF0000;
+  --light-gray: #C0C0C0;
+  --medium-gray: #808080;
+  --highlight: #FFFFFF;
+  --shadow: #000000;
+  --white: #FFFFFF;
+}
+
+@font-face {
+  font-family: 'Levi Windows';
+  src: local('Levi Windows'), url(fonts/LeviWindows.ttf) format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Levi Windows';
+}
+
+img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #008081;
+}
+
+.in {
+  border-left: 2px solid var(--shadow);
+  border-top: 2px solid var(--shadow);
+  border-right: 2px solid var(--highlight);
+  border-bottom: 2px solid var(--highlight);
+}
+
+.out {
+  border-left: 2px solid var(--highlight);
+  border-top: 2px solid var(--highlight);
+  border-right: 2px solid var(--shadow);
+  border-bottom: 2px solid var(--shadow);
+}
+
+.window {
+  min-width: 300px;
+  min-height: 200px;
+  background-color: var(--light-gray);
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+
+  .window-header {
+    width: calc(100% - 5px);
+    height: 24px;
+    background-color: var(--blue);
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    color: var(--white);
+  }
+}
+
+
+
+.blank-container {
+  background-color: var(--white);
+  flex: 2;
+}
+
+.button {
+  min-width: 24px;
+  height: 22px;
+  background-color: var(--light-gray);
+  margin: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    background-color: var(--medium-gray);
+  }
+}
+
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--light-gray);
+  height: 36px;
+  border-top: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Icon {
+  height: 16px;
+}
+
+.DesktopIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 128px;
+  user-select: none;
+
+  img {
+    height: 64px;
+    user-select: none;
+    
+    /* Disable selecting of image */
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+    pointer-events:none
+  }
+
+  p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.resize {
+  position: relative;
+
+  .resize-content {
+    min-width: 300px;
+    min-height: 200px;
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+  }
+
+  .resize-control {
+    height: 20px;
+    background: var(--light-gray);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: end;
+
+    img {
+      width: 20px;
+    }
+  }
+}
+
