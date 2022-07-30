@@ -39,13 +39,13 @@ export default class FileIcon extends Component {
   }
 
   render() {
+    let style = this.props.useDarkText ? "DesktopIcon dark" : "DesktopIcon";
+    console.log(style);
+
     if (this.state.active) {
       return (
         <>
-          <div
-            className="DesktopIcon"
-            onDoubleClick={this.onDoubleClick.bind(this)}
-          >
+          <div className={style} onDoubleClick={this.onDoubleClick.bind(this)}>
             <img src={this.getIcon()}></img>
             <p>This Folder Has A Long Name</p>
           </div>
@@ -55,10 +55,7 @@ export default class FileIcon extends Component {
     } else {
       return (
         <>
-          <div
-            className="DesktopIcon"
-            onDoubleClick={this.onDoubleClick.bind(this)}
-          >
+          <div className={style} onDoubleClick={this.onDoubleClick.bind(this)}>
             <img src={this.getIcon()}></img>
             <p>This Folder Has A Long Name</p>
           </div>

@@ -1,4 +1,5 @@
 import FileIcon from "./components/FileIcon";
+import FileManagerFileIcon from "./components/FileManagerFileIcon";
 import PhotoFileIcon from "./components/PhotoFileIcon";
 import PhotoWindow from "./components/PhotoWindow";
 import TextEditorWindow from "./components/TextEditorWindow";
@@ -7,8 +8,26 @@ import rug from "./images/gallery/rug.jpg";
 function App() {
   return (
     <div className="App">
-      <FileIcon active={false} icon="FILE" />
-      <PhotoFileIcon active={false} icon="FILE" image={rug} />
+      <FileManagerFileIcon active={false} icon="FILE" image={rug}>
+        <PhotoFileIcon
+          active={false}
+          icon="FILE"
+          useDarkText={true}
+          image={rug}
+        />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+      </FileManagerFileIcon>
 
       <div className="footer">
         <a className="button out">Start</a>
