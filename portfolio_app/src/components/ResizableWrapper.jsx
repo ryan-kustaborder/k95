@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Window from "./Window";
 import resize from "../images/icons/resize.png";
 
 export default class ResizeWrapper extends Component {
@@ -75,7 +74,12 @@ export default class ResizeWrapper extends Component {
           {this.props.children}
         </div>
         <div className="resize-control">
-          <img src={resize} onMouseDown={this.onMouseDown.bind(this)}></img>
+          <img
+            src={resize}
+            aria-hidden="true"
+            alt=""
+            onMouseDown={this.onMouseDown.bind(this)}
+          ></img>
         </div>
       </div>
     );

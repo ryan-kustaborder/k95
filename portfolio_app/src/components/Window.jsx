@@ -88,7 +88,12 @@ export default class Window extends Component {
         >
           <p>{this.props.title}</p>
           <button className="button out" onClick={this.hide.bind(this)}>
-            <img className="Icon" src={CLOSE_ICON}></img>
+            <img
+              aria-hidden="true"
+              alt=""
+              className="Icon"
+              src={CLOSE_ICON}
+            ></img>
           </button>
         </div>
         {this.props.children}

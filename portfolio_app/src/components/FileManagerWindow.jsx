@@ -3,10 +3,6 @@ import Window from "./Window";
 import ResizeWrapper from "./ResizableWrapper";
 
 export default class FileManagerWindow extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Window

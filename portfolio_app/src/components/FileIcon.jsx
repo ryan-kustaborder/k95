@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import folder from "../images/icons/folder.png";
 import file from "../images/icons/file.png";
 import Window from "./Window";
 
@@ -46,7 +45,7 @@ export default class FileIcon extends Component {
       return (
         <>
           <div className={style} onDoubleClick={this.onDoubleClick.bind(this)}>
-            <img src={this.getIcon()}></img>
+            <img alt={this.props.alt} src={this.getIcon()}></img>
             <p>This Folder Has A Long Name</p>
           </div>
           {this.getInnerWindow()}
@@ -56,7 +55,7 @@ export default class FileIcon extends Component {
       return (
         <>
           <div className={style} onDoubleClick={this.onDoubleClick.bind(this)}>
-            <img src={this.getIcon()}></img>
+            <img alt={this.props.alt} src={this.getIcon()}></img>
             <p>This Folder Has A Long Name</p>
           </div>
         </>

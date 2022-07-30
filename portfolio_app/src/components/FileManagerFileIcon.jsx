@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import FileIcon from "./FileIcon";
-import PhotoWindow from "./PhotoWindow";
 import FILE_MANAGER_ICON from "../images/icons/file-manager.png";
 import FileManagerWindow from "./FileManagerWindow";
 
