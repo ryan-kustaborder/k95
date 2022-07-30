@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import DesktopIcon from "./DesktopIcon";
+import FileIcon from "./FileIcon";
 import PhotoWindow from "./PhotoWindow";
 import Window from "./Window";
+import PHOTO_ICON from "../images/icons/globe.png";
 
-export default class PhotoFileIcon extends DesktopIcon {
+export default class PhotoFileIcon extends FileIcon {
   getInnerWindow() {
     return (
       <PhotoWindow
@@ -14,5 +15,9 @@ export default class PhotoFileIcon extends DesktopIcon {
         <img src={this.props.image}></img>
       </PhotoWindow>
     );
+  }
+
+  getIcon() {
+    return PHOTO_ICON;
   }
 }

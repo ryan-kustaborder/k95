@@ -3,7 +3,7 @@ import folder from "../images/icons/folder.png";
 import file from "../images/icons/file.png";
 import Window from "./Window";
 
-export default class DesktopIcon extends Component {
+export default class FileIcon extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,6 @@ export default class DesktopIcon extends Component {
   }
 
   onCloseWindow() {
-    console.log(this);
     this.setState({
       active: false,
     });
@@ -35,18 +34,11 @@ export default class DesktopIcon extends Component {
     );
   }
 
+  getIcon() {
+    return file;
+  }
+
   render() {
-    let image;
-
-    switch (this.props.icon) {
-      case "FOLDER":
-        image = folder;
-        break;
-      case "FILE":
-        image = file;
-        break;
-    }
-
     if (this.state.active) {
       return (
         <>
@@ -54,7 +46,7 @@ export default class DesktopIcon extends Component {
             className="DesktopIcon"
             onDoubleClick={this.onDoubleClick.bind(this)}
           >
-            <img src={image}></img>
+            <img src={this.getIcon()}></img>
             <p>This Folder Has A Long Name</p>
           </div>
           {this.getInnerWindow()}
@@ -67,7 +59,7 @@ export default class DesktopIcon extends Component {
             className="DesktopIcon"
             onDoubleClick={this.onDoubleClick.bind(this)}
           >
-            <img src={image}></img>
+            <img src={this.getIcon()}></img>
             <p>This Folder Has A Long Name</p>
           </div>
         </>
