@@ -8,9 +8,8 @@ class DraggableWindow extends Component {
       pos: { x: 50, y: 50 },
       dragging: false,
       rel: null,
-      render: true,
+      render: this.props.active,
     };
-
     this.ref = React.createRef();
   }
 
@@ -66,6 +65,7 @@ class DraggableWindow extends Component {
     this.setState({
       render: false,
     });
+    this.props.onCloseWindow();
   }
 
   render() {
