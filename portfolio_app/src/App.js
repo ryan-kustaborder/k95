@@ -1,11 +1,13 @@
 import DesktopIcon from "./components/DesktopIcon";
 import DraggableWindow from "./components/DraggableWindow";
+import ResizableDraggableWindow from "./components/ResizableDraggableWindow";
 
 function App() {
   return (
     <div className="App">
-      <DesktopIcon icon="FILE" />
-      <DesktopIcon icon="FOLDER" />
+      <ResizableDraggableWindow active={true} onCloseWindow={() => {}}>
+        <div className="blank-container"></div>
+      </ResizableDraggableWindow>
 
       <div className="footer">
         <a className="button out">Start</a>

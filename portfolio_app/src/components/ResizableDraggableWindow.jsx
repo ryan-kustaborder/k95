@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import Icon from "./Icon";
+import DraggableWindow from "./DraggableWindow";
+import resize from "../images/icons/resize.png";
 
-class DraggableWindow extends Component {
+export default class ResizableDraggableWindow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pos: { x: 50, y: 50 },
+      size: { width: 500, height: 300 },
       dragging: false,
       rel: null,
-      render: this.props.active,
     };
     this.ref = React.createRef();
   }
@@ -26,16 +26,16 @@ class DraggableWindow extends Component {
   onMouseDown(e) {
     if (e.button !== 0) return;
 
-    var pos = {
-      top: parseInt(this.ref.current.offsetTop),
-      left: parseInt(this.ref.current.offsetLeft),
+    var size = {
+      top: parseInt(this.ref.current.clientHeight),
+      left: parseInt(this.ref.current.clientWidth),
     };
 
     this.setState({
       dragging: true,
       rel: {
-        x: e.pageX - pos.left,
-        y: e.pageY - pos.top,
+        x: e.pageX - size.left,
+        y: e.pageY - size.top,
       },
     });
     e.stopPropagation();
@@ -51,9 +51,9 @@ class DraggableWindow extends Component {
   onMouseMove(e) {
     if (!this.state.dragging) return;
     this.setState({
-      pos: {
-        x: e.pageX - this.state.rel.x,
-        y: e.pageY - this.state.rel.y,
+      size: {
+        width: e.pageX - this.state.rel.x,
+        height: e.pageY - this.state.rel.y,
       },
     });
 
@@ -61,40 +61,23 @@ class DraggableWindow extends Component {
     e.preventDefault();
   }
 
-  hide(e) {
-    this.setState({
-      render: false,
-    });
-    this.props.onCloseWindow();
-  }
-
   render() {
-    if (!this.state.render) {
-      return null;
-    }
-
-    var top = this.state.pos.y;
-    var left = this.state.pos.x;
+    var height = this.state.size.height;
+    var width = this.state.size.width;
 
     return (
-      <div
-        style={{ position: "absolute", top: top + "px", left: left + "px" }}
-        className="window out"
-        ref={this.ref}
-      >
+      <DraggableWindow active={true} onCloseWindow={() => {}}>
         <div
-          className="window-header"
-          onMouseDown={this.onMouseDown.bind(this)}
+          style={{ height: height + "px", width: width + "px" }}
+          className="resizable in"
+          ref={this.ref}
         >
-          <p>Window Title</p>
-          <button className="button out" onClick={this.hide.bind(this)}>
-            <Icon />
-          </button>
+          {this.props.children}
         </div>
-        {this.props.children}
-      </div>
+        <div className="resizable-control">
+          <img src={resize} onMouseDown={this.onMouseDown.bind(this)}></img>
+        </div>
+      </DraggableWindow>
     );
   }
 }
-
-export default DraggableWindow;

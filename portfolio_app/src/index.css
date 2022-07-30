@@ -43,8 +43,8 @@
 }
 
 .window {
-  width: 500px;
-  height: 300px;
+  min-width: 300px;
+  min-height: 200px;
   background-color: var(--light-gray);
   padding: 1px;
   display: flex;
@@ -124,4 +124,27 @@
   color: white;
   font-size: 20px;
   text-align: center;
+}
+
+.resizable {
+  min-width: 300px;
+  min-height: 200px;
+  position: relative;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.resizable-control {
+  height: 24px;
+  background: var(--light-gray);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: end;
+}
+
+.resizable-control img {
+  width: 24px;
 }
