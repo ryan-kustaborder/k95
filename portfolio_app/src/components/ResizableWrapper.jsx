@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DraggableWindow from "./DraggableWindow";
+import Window from "./Window";
 import resize from "../images/icons/resize.png";
 
 export default class ResizeWrapper extends Component {

@@ -20,6 +20,12 @@
   font-family: 'Levi Windows';
 }
 
+img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
 .App {
   display: flex;
   align-items: center;
@@ -134,12 +140,12 @@
   min-width: 300px;
   min-height: 200px;
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   display: flex;
 }
 
 .resize-control {
-  height: 24px;
+  height: 20px;
   background: var(--light-gray);
   position: absolute;
   bottom: 0;
@@ -150,5 +156,5 @@
 }
 
 .resize-control img {
-  width: 24px;
+  width: 20px;
 }

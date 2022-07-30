@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CLOSE_ICON from "../images/icons/x.png";
 
-export default class DraggableWindow extends Component {
+export default class Window extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -86,7 +86,7 @@ export default class DraggableWindow extends Component {
           className="window-header"
           onMouseDown={this.onMouseDown.bind(this)}
         >
-          <p>Window Title</p>
+          <p>{this.props.title}</p>
           <button className="button out" onClick={this.hide.bind(this)}>
             <img className="Icon" src={CLOSE_ICON}></img>
           </button>
