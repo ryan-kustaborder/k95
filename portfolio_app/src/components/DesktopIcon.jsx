@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import image from "../images/icons/folder.png";
+import folder from "../images/icons/folder.png";
+import file from "../images/icons/file.png";
 import DraggableWindow from "./DraggableWindow";
 
 export default class DesktopIcon extends Component {
@@ -25,6 +26,19 @@ export default class DesktopIcon extends Component {
   }
 
   render() {
+    let image;
+
+    switch (this.props.icon) {
+      case "FOLDER":
+        image = folder;
+        break;
+      case "FILE":
+        image = file;
+        break;
+    }
+
+    console.log(image);
+
     if (this.state.active) {
       return (
         <>
