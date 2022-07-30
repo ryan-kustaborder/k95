@@ -15,18 +15,54 @@ function App() {
           useDarkText={true}
           image={rug}
         />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
-        <PhotoFileIcon active={false} icon="FILE" image={rug} />
+        <PhotoFileIcon
+          active={false}
+          icon="FILE"
+          useDarkText={true}
+          image={rug}
+        />
+        <PhotoFileIcon
+          active={false}
+          icon="FILE"
+          useDarkText={true}
+          image={rug}
+        />
+        <PhotoFileIcon
+          active={false}
+          icon="FILE"
+          useDarkText={true}
+          image={rug}
+        />
+        <PhotoFileIcon
+          active={false}
+          icon="FILE"
+          useDarkText={true}
+          image={rug}
+        />
+        <PhotoFileIcon
+          active={false}
+          icon="FILE"
+          useDarkText={true}
+          image={rug}
+        />
+        <PhotoFileIcon
+          active={false}
+          icon="FILE"
+          useDarkText={true}
+          image={rug}
+        />
+        <PhotoFileIcon
+          active={false}
+          icon="FILE"
+          useDarkText={true}
+          image={rug}
+        />
+        <PhotoFileIcon
+          active={false}
+          icon="FILE"
+          useDarkText={true}
+          image={rug}
+        />
       </FileManagerFileIcon>
 
       <div className="footer">
