@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Window from "./Window";
 import ResizeWrapper from "./ResizableWrapper";
+import ScrollableWrapper from "./ScrollableWrapper";
 
 export default class FileManagerWindow extends Component {
   render() {
@@ -11,9 +12,11 @@ export default class FileManagerWindow extends Component {
         onCloseWindow={this.props.onCloseWindow}
       >
         <ResizeWrapper active={true} onCloseWindow={() => {}}>
-          <div className="blank-container">
-            <div className="file-grid">{this.props.children}</div>
-          </div>
+          <ScrollableWrapper>
+            <div className="blank-container">
+              <div className="file-grid">{this.props.children}</div>
+            </div>
+          </ScrollableWrapper>
         </ResizeWrapper>
       </Window>
     );
