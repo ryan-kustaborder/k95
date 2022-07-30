@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DraggableWindow from "./DraggableWindow";
 import resize from "../images/icons/resize.png";
 
-export default class ResizableDraggableWindow extends Component {
+export default class ResizeWrapper extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -66,18 +66,18 @@ export default class ResizableDraggableWindow extends Component {
     var width = this.state.size.width;
 
     return (
-      <DraggableWindow active={true} onCloseWindow={() => {}}>
+      <div className="resize">
         <div
           style={{ height: height + "px", width: width + "px" }}
-          className="resizable in"
+          className="resize-content in"
           ref={this.ref}
         >
           {this.props.children}
         </div>
-        <div className="resizable-control">
+        <div className="resize-control">
           <img src={resize} onMouseDown={this.onMouseDown.bind(this)}></img>
         </div>
-      </DraggableWindow>
+      </div>
     );
   }
 }

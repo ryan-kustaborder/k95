@@ -1,13 +1,9 @@
-import DesktopIcon from "./components/DesktopIcon";
-import DraggableWindow from "./components/DraggableWindow";
-import ResizableDraggableWindow from "./components/ResizableDraggableWindow";
+import TextEditorWindow from "./components/TextEditorWindow";
 
 function App() {
   return (
     <div className="App">
-      <ResizableDraggableWindow active={true} onCloseWindow={() => {}}>
-        <div className="blank-container"></div>
-      </ResizableDraggableWindow>
+      <TextEditorWindow />
 
       <div className="footer">
         <a className="button out">Start</a>

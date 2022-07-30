@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Icon from "./Icon";
 
-class DraggableWindow extends Component {
+export default class DraggableWindow extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -96,5 +96,3 @@ class DraggableWindow extends Component {
     );
   }
 }
-
-export default DraggableWindow;

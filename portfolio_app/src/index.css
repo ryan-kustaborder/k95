@@ -126,7 +126,11 @@
   text-align: center;
 }
 
-.resizable {
+.resize {
+  position: relative;
+}
+
+.resize-content {
   min-width: 300px;
   min-height: 200px;
   position: relative;
@@ -134,7 +138,7 @@
   display: flex;
 }
 
-.resizable-control {
+.resize-control {
   height: 24px;
   background: var(--light-gray);
   position: absolute;
@@ -145,6 +149,6 @@
   justify-content: end;
 }
 
-.resizable-control img {
+.resize-control img {
   width: 24px;
 }
