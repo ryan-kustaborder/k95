@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import FileManagerFileIcon from "./components/FileManagerFileIcon";
+import FooterTab from "./components/FooterTab";
 import PhotoFileIcon from "./components/PhotoFileIcon";
 import rug from "./images/gallery/rug.jpg";
 
@@ -37,6 +38,10 @@ export default class App_ extends Component {
   }
 
   render() {
+    const tabs = this.state.windows.map((d) => (
+      <FooterTab title={d.props.title} />
+    ));
+
     return (
       <div className="App">
         <FileManagerFileIcon
@@ -58,6 +63,7 @@ export default class App_ extends Component {
 
         <div className="footer">
           <button className="button out">Start</button>
+          {tabs}
           <button className="button in">11:27 p.m.</button>
         </div>
       </div>

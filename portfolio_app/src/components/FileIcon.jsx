@@ -23,6 +23,8 @@ export default class FileIcon extends Component {
       active: false,
     });
 
+    console.log(this.state.window.props.title);
+
     this.props.onRemoveWindow(this.state.window);
   }
 
