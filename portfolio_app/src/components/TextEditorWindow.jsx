@@ -5,8 +5,8 @@ import ResizeWrapper from "./ResizableWrapper";
 export default class TextEditorWindow extends Component {
   render() {
     return (
-      <Window active={true} onCloseWindow={() => {}}>
-        <ResizeWrapper active={true} onCloseWindow={() => {}}>
+      <Window onCloseWindow={() => {}}>
+        <ResizeWrapper onCloseWindow={() => {}}>
           <div className="blank-container"></div>
         </ResizeWrapper>
       </Window>

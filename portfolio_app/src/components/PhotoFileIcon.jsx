@@ -10,7 +10,6 @@ export default class PhotoFileIcon extends FileIcon {
         <PhotoWindow
           title="Photo Window"
           key={this.props.image}
-          active={this.state.active}
           onCloseWindow={this.onCloseWindow.bind(this)}
           onSelectWindow={this.props.onSelectWindow}
         >

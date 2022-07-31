@@ -7,11 +7,10 @@ export default class PhotoWindow extends Component {
     return (
       <Window
         title={this.props.title}
-        active={true}
         onCloseWindow={this.props.onCloseWindow}
         onSelectWindow={this.props.onSelectWindow}
       >
-        <ResizeWrapper active={true} onCloseWindow={() => {}}>
+        <ResizeWrapper onCloseWindow={() => {}}>
           <div className="blank-container">{this.props.children}</div>
         </ResizeWrapper>
       </Window>

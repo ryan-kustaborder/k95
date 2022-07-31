@@ -33,7 +33,6 @@ export default class App_ extends Component {
     newWindows.push(window);
     this.setState({ windows: newWindows });
 
-    console.log(window);
     return window;
   }
 
@@ -49,21 +48,19 @@ export default class App_ extends Component {
   }
 
   render() {
-    const tabs = this.state.windows.map((d) => (
-      <FooterTab title={d.props.title} />
+    const tabs = this.state.windows.map((window) => (
+      <FooterTab title={window.props.title} />
     ));
 
     return (
       <div className="App">
         <FileManagerFileIcon
-          active={false}
           icon="FILE"
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
         >
           <PhotoFileIcon
-            active={false}
             onAddWindow={this.addWindow.bind(this)}
             onRemoveWindow={this.removeWindow.bind(this)}
             onSelectWindow={this.selectWindow.bind(this)}
