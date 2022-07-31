@@ -8,6 +8,7 @@ export default class Window extends Component {
       pos: { x: 50, y: 50 },
       dragging: false,
       rel: null,
+      selected: false,
     };
     this.ref = React.createRef();
   }
@@ -60,6 +61,11 @@ export default class Window extends Component {
     e.preventDefault();
   }
 
+  onSelect() {
+    console.log(this);
+    this.setState({ selected: true });
+  }
+
   hide(e) {
     this.setState({
       render: false,
@@ -71,11 +77,17 @@ export default class Window extends Component {
     var top = this.state.pos.y;
     var left = this.state.pos.x;
 
+    let style = { position: "absolute", top: top + "px", left: left + "px" };
+    if (this.state.selected) {
+      style.zIndex = 10000;
+    }
+
     return (
       <div
-        style={{ position: "absolute", top: top + "px", left: left + "px" }}
+        style={style}
         className="window out"
         ref={this.ref}
+        onClick={this.onSelect.bind(this)}
       >
         <div
           className="window-header"
