@@ -7,19 +7,23 @@ export default class FileIcon extends Component {
     super(props);
     this.state = {
       active: false,
+      window: null,
     };
 
     this.ref = React.createRef();
   }
 
   onDoubleClick() {
-    this.props.onAddWindow(this.getInnerWindow());
+    var window = this.props.onAddWindow(this.getInnerWindow());
+    this.setState({ window: window });
   }
 
   onCloseWindow() {
     this.setState({
       active: false,
     });
+
+    this.props.onRemoveWindow(this.state.window);
   }
 
   getInnerWindow() {

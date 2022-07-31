@@ -21,6 +21,19 @@ export default class App_ extends Component {
     }
     newWindows.push(window);
     this.setState({ windows: newWindows });
+
+    return window;
+  }
+
+  removeWindow(window) {
+    let newWindows = [];
+
+    for (var oldWindow in this.state.windows) {
+      if (this.state.windows[oldWindow] != window)
+        newWindows.push(this.state.windows[oldWindow]);
+    }
+
+    this.setState({ windows: newWindows });
   }
 
   render() {
@@ -30,10 +43,12 @@ export default class App_ extends Component {
           active={false}
           icon="FILE"
           onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
         >
           <PhotoFileIcon
             active={false}
             onAddWindow={this.addWindow.bind(this)}
+            onRemoveWindow={this.removeWindow.bind(this)}
             image={rug}
             useDarkText={true}
           />
