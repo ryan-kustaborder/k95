@@ -11,7 +11,17 @@ export default class App_ extends Component {
 
     this.state = {
       windows: [],
+      selected: null,
     };
+  }
+
+  selectWindow(window) {
+    if (this.state.selected) {
+      this.state.selected.setState({ selected: false });
+    }
+    window.setState({ selected: true });
+
+    this.setState({ selected: window });
   }
 
   addWindow(window) {
@@ -23,6 +33,7 @@ export default class App_ extends Component {
     newWindows.push(window);
     this.setState({ windows: newWindows });
 
+    console.log(window);
     return window;
   }
 
@@ -49,11 +60,13 @@ export default class App_ extends Component {
           icon="FILE"
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
         >
           <PhotoFileIcon
             active={false}
             onAddWindow={this.addWindow.bind(this)}
             onRemoveWindow={this.removeWindow.bind(this)}
+            onSelectWindow={this.selectWindow.bind(this)}
             image={rug}
             useDarkText={true}
           />

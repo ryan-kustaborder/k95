@@ -10,6 +10,7 @@ export default class FileManagerWindow extends Component {
         title={this.props.title}
         active={true}
         onCloseWindow={this.props.onCloseWindow}
+        onSelectWindow={this.props.onSelectWindow}
       >
         <ResizeWrapper active={true} onCloseWindow={() => {}}>
           <ScrollableWrapper>

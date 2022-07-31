@@ -24,6 +24,7 @@ export default class Window extends Component {
   }
 
   onMouseDown(e) {
+    this.onSelect();
     if (e.button !== 0) return;
 
     var pos = {
@@ -62,8 +63,7 @@ export default class Window extends Component {
   }
 
   onSelect() {
-    console.log(this);
-    this.setState({ selected: true });
+    this.props.onSelectWindow(this);
   }
 
   hide(e) {

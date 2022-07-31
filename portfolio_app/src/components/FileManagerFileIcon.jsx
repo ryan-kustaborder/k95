@@ -12,6 +12,7 @@ export default class FileManagerFileIcon extends FileIcon {
           key={"File Manager"}
           active={this.state.active}
           onCloseWindow={this.onCloseWindow.bind(this)}
+          onSelectWindow={this.props.onSelectWindow}
         >
           {this.props.children}
         </FileManagerWindow>
