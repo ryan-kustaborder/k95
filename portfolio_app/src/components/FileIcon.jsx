@@ -42,7 +42,7 @@ export default class FileIcon extends Component {
       <>
         <div className={style} onDoubleClick={this.onDoubleClick.bind(this)}>
           <img alt={this.props.alt} src={this.getIcon()}></img>
-          <p>file</p>
+          <p>{this.props.title}</p>
         </div>
       </>
     );

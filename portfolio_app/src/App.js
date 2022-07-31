@@ -55,10 +55,10 @@ export default class App_ extends Component {
     return (
       <div className="App">
         <FileManagerFileIcon
-          icon="FILE"
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
+          title={"Gallery"}
         >
           <PhotoFileIcon
             onAddWindow={this.addWindow.bind(this)}
@@ -66,6 +66,7 @@ export default class App_ extends Component {
             onSelectWindow={this.selectWindow.bind(this)}
             image={rug}
             useDarkText={true}
+            title={"rug.png"}
           />
         </FileManagerFileIcon>
 

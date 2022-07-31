@@ -1,6 +1,6 @@
 import React from "react";
 import FileIcon from "./FileIcon";
-import FILE_MANAGER_ICON from "../images/icons/file-manager.png";
+import GALLERY_ICON from "../images/icons/documents.png";
 import FileManagerWindow from "./FileManagerWindow";
 
 export default class FileManagerFileIcon extends FileIcon {
@@ -8,8 +8,8 @@ export default class FileManagerFileIcon extends FileIcon {
     if (!this.state.window) {
       let window = (
         <FileManagerWindow
-          title="File Manager"
-          key={"File Manager"}
+          title={this.props.title}
+          key={"Window - " + this.props.title}
           onCloseWindow={this.onCloseWindow.bind(this)}
           onSelectWindow={this.props.onSelectWindow}
         >
@@ -23,6 +23,6 @@ export default class FileManagerFileIcon extends FileIcon {
   }
 
   getIcon() {
-    return FILE_MANAGER_ICON;
+    return GALLERY_ICON;
   }
 }
