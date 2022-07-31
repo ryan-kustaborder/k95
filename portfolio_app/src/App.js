@@ -73,7 +73,17 @@ export default class App_ extends Component {
         {this.state.windows}
 
         <div className="footer">
-          <button className="button out">Start</button>
+          <button
+            className="button out"
+            onClick={() => {
+              document.documentElement.style.setProperty(
+                "--light-gray",
+                "green"
+              );
+            }}
+          >
+            Start
+          </button>
           {tabs}
           <button className="button in">11:27 p.m.</button>
         </div>
