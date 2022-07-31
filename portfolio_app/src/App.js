@@ -1,76 +1,51 @@
-import FileIcon from "./components/FileIcon";
+import React, { Component } from "react";
+
 import FileManagerFileIcon from "./components/FileManagerFileIcon";
 import PhotoFileIcon from "./components/PhotoFileIcon";
-import PhotoWindow from "./components/PhotoWindow";
-import TextEditorWindow from "./components/TextEditorWindow";
 import rug from "./images/gallery/rug.jpg";
 
-function App() {
-  return (
-    <div className="App">
-      <FileManagerFileIcon active={false} icon="FILE" image={rug}>
-        <PhotoFileIcon
-          active={false}
-          icon="FILE"
-          useDarkText={true}
-          image={rug}
-        />
-        <PhotoFileIcon
-          active={false}
-          icon="FILE"
-          useDarkText={true}
-          image={rug}
-        />
-        <PhotoFileIcon
-          active={false}
-          icon="FILE"
-          useDarkText={true}
-          image={rug}
-        />
-        <PhotoFileIcon
-          active={false}
-          icon="FILE"
-          useDarkText={true}
-          image={rug}
-        />
-        <PhotoFileIcon
-          active={false}
-          icon="FILE"
-          useDarkText={true}
-          image={rug}
-        />
-        <PhotoFileIcon
-          active={false}
-          icon="FILE"
-          useDarkText={true}
-          image={rug}
-        />
-        <PhotoFileIcon
-          active={false}
-          icon="FILE"
-          useDarkText={true}
-          image={rug}
-        />
-        <PhotoFileIcon
-          active={false}
-          icon="FILE"
-          useDarkText={true}
-          image={rug}
-        />
-        <PhotoFileIcon
-          active={false}
-          icon="FILE"
-          useDarkText={true}
-          image={rug}
-        />
-      </FileManagerFileIcon>
+export default class App_ extends Component {
+  constructor(props) {
+    super(props);
 
-      <div className="footer">
-        <a className="button out">Start</a>
-        <a className="button in">11:27 p.m.</a>
+    this.state = {
+      windows: [],
+    };
+  }
+
+  addWindow(window) {
+    let newWindows = [];
+
+    for (var oldWindow in this.state.windows) {
+      newWindows.push(this.state.windows[oldWindow]);
+    }
+    newWindows.push(window);
+    this.setState({ windows: newWindows });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <FileManagerFileIcon
+          active={false}
+          icon="FILE"
+          onAddWindow={this.addWindow.bind(this)}
+        >
+          <PhotoFileIcon
+            active={false}
+            onAddWindow={this.addWindow.bind(this)}
+            image={rug}
+            useDarkText={true}
+          />
+        </FileManagerFileIcon>
+
+        {this.state.windows}
+
+        <div className="footer">
+          <button className="button out">Start</button>
+          <button className="button in">11:27 p.m.</button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-export default App;

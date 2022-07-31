@@ -13,9 +13,7 @@ export default class FileIcon extends Component {
   }
 
   onDoubleClick() {
-    this.setState({
-      active: true,
-    });
+    this.props.onAddWindow(this.getInnerWindow());
   }
 
   onCloseWindow() {
