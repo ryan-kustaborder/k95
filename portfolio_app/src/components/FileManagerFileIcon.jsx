@@ -4,17 +4,22 @@ import FILE_MANAGER_ICON from "../images/icons/file-manager.png";
 import FileManagerWindow from "./FileManagerWindow";
 
 export default class FileManagerFileIcon extends FileIcon {
-  getInnerWindow() {
-    return (
-      <FileManagerWindow
-        title="File Manager"
-        key={"File Manager"}
-        active={this.state.active}
-        onCloseWindow={this.onCloseWindow.bind(this)}
-      >
-        {this.props.children}
-      </FileManagerWindow>
-    );
+  onDoubleClick() {
+    if (!this.state.window) {
+      let window = (
+        <FileManagerWindow
+          title="File Manager"
+          key={"File Manager"}
+          active={this.state.active}
+          onCloseWindow={this.onCloseWindow.bind(this)}
+        >
+          {this.props.children}
+        </FileManagerWindow>
+      );
+      this.setState({ window: window });
+
+      this.props.onAddWindow(window);
+    }
   }
 
   getIcon() {

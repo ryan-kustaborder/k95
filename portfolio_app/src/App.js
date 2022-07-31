@@ -30,7 +30,7 @@ export default class App_ extends Component {
     let newWindows = [];
 
     for (var oldWindow in this.state.windows) {
-      if (this.state.windows[oldWindow] != window)
+      if (this.state.windows[oldWindow] !== window)
         newWindows.push(this.state.windows[oldWindow]);
     }
 

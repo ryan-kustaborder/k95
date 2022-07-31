@@ -8,7 +8,6 @@ export default class Window extends Component {
       pos: { x: 50, y: 50 },
       dragging: false,
       rel: null,
-      render: this.props.active,
     };
     this.ref = React.createRef();
   }
@@ -69,10 +68,6 @@ export default class Window extends Component {
   }
 
   render() {
-    if (!this.state.render) {
-      return null;
-    }
-
     var top = this.state.pos.y;
     var left = this.state.pos.x;
 

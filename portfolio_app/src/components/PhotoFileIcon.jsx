@@ -4,17 +4,22 @@ import PhotoWindow from "./PhotoWindow";
 import PHOTO_ICON from "../images/icons/globe.png";
 
 export default class PhotoFileIcon extends FileIcon {
-  getInnerWindow() {
-    return (
-      <PhotoWindow
-        title="Photo Window"
-        key={this.props.image}
-        active={this.state.active}
-        onCloseWindow={this.onCloseWindow.bind(this)}
-      >
-        <img src={this.props.image} alt={this.props.alt}></img>
-      </PhotoWindow>
-    );
+  onDoubleClick() {
+    if (!this.state.window) {
+      let window = (
+        <PhotoWindow
+          title="Photo Window"
+          key={this.props.image}
+          active={this.state.active}
+          onCloseWindow={this.onCloseWindow.bind(this)}
+        >
+          <img src={this.props.image} alt={this.props.alt}></img>
+        </PhotoWindow>
+      );
+      this.setState({ window: window });
+
+      this.props.onAddWindow(window);
+    }
   }
 
   getIcon() {
