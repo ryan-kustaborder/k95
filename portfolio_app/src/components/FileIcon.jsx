@@ -39,7 +39,6 @@ export default class FileIcon extends Component {
 
   render() {
     let style = this.props.useDarkText ? "DesktopIcon dark" : "DesktopIcon";
-    console.log(style);
 
     if (this.state.active) {
       return (
