@@ -48,11 +48,11 @@ export default class SlideshowWindow extends Component {
         <ResizeWrapper onCloseWindow={() => {}}>
           <div className="vertical-layout">
             <ScrollableWrapper>
-              <div className="blank-container">
+              <div className="blank-container in">
                 <img src={currentImage} alt={this.props.alt}></img>
               </div>
             </ScrollableWrapper>
-            <div>
+            <div className="control-set">
               <button className="out" onClick={this.onPrev.bind(this)}>
                 {"<"} Prev
               </button>

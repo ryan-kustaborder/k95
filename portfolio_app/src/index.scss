@@ -190,3 +190,10 @@ button {
   width: 100%;
     overflow: hidden;
 }
+
+.control-set {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+}
