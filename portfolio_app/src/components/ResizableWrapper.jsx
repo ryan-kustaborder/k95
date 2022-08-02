@@ -68,7 +68,7 @@ export default class ResizeWrapper extends Component {
       <div className="resize">
         <div
           style={{ height: height + "px", width: width + "px" }}
-          className="resize-content in"
+          className="resize-content"
           ref={this.ref}
         >
           {this.props.children}

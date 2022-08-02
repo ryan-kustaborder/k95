@@ -2,8 +2,10 @@ import React, { Component } from "react";
 
 import FileManagerFileIcon from "./components/FileManagerFileIcon";
 import FooterTab from "./components/FooterTab";
+import PDFFileIcon from "./components/PDFFileIcon";
 import PhotoFileIcon from "./components/PhotoFileIcon";
 import rug from "./images/gallery/rug.jpg";
+import processBook from "./documents/Booklet Process.pdf";
 
 export default class App_ extends Component {
   constructor(props) {
@@ -67,6 +69,15 @@ export default class App_ extends Component {
             image={rug}
             useDarkText={true}
             title={"rug.png"}
+          />
+
+          <PDFFileIcon
+            onAddWindow={this.addWindow.bind(this)}
+            onRemoveWindow={this.removeWindow.bind(this)}
+            onSelectWindow={this.selectWindow.bind(this)}
+            image={rug}
+            useDarkText={true}
+            title={".pdf"}
           />
         </FileManagerFileIcon>
 
