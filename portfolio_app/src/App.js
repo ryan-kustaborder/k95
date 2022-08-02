@@ -2,10 +2,11 @@ import React, { Component } from "react";
 
 import FileManagerFileIcon from "./components/FileManagerFileIcon";
 import FooterTab from "./components/FooterTab";
-import PDFFileIcon from "./components/PDFFileIcon";
+import PDFFileIcon from "./components/SlideshowFileIcon";
 import PhotoFileIcon from "./components/PhotoFileIcon";
 import rug from "./images/gallery/rug.jpg";
-import processBook from "./documents/Booklet Process.pdf";
+import img1 from "./images/icons/display.png";
+import img2 from "./images/icons/file.png";
 
 export default class App_ extends Component {
   constructor(props) {
@@ -75,7 +76,7 @@ export default class App_ extends Component {
             onAddWindow={this.addWindow.bind(this)}
             onRemoveWindow={this.removeWindow.bind(this)}
             onSelectWindow={this.selectWindow.bind(this)}
-            image={rug}
+            images={[img1, img2, rug]}
             useDarkText={true}
             title={".pdf"}
           />

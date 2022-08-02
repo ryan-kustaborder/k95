@@ -2,29 +2,42 @@ import React, { Component } from "react";
 
 import Window from "./Window";
 import ResizeWrapper from "./ResizableWrapper";
-import img1 from "../images/icons/display.png";
-import img2 from "../images/icons/file.png";
+
 import ScrollableWrapper from "./ScrollableWrapper";
 
-export default class PDFWindow extends Component {
+export default class SlideshowWindow extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { current: 1 };
+    this.state = { current: 0 };
   }
 
-  onClick() {
-    this.setState({ current: 0 });
+  onPrev() {
+    let i = this.state.current;
+
+    if (i <= 0) {
+      i = this.props.images.length - 1;
+    } else {
+      i--;
+    }
+
+    this.setState({ current: i });
+  }
+
+  onNext() {
+    let i = this.state.current;
+
+    if (i + 1 >= this.props.images.length) {
+      i = 0;
+    } else {
+      i++;
+    }
+
+    this.setState({ current: i });
   }
 
   render() {
-    let currentImage;
-
-    if (this.state.current == 0) {
-      currentImage = img1;
-    } else {
-      currentImage = img2;
-    }
+    let currentImage = this.props.images[this.state.current];
 
     return (
       <Window
@@ -39,9 +52,14 @@ export default class PDFWindow extends Component {
                 <img src={currentImage} alt={this.props.alt}></img>
               </div>
             </ScrollableWrapper>
-            <button class="out" onClick={this.onClick.bind(this)}>
-              Next {">"}
-            </button>
+            <div>
+              <button className="out" onClick={this.onPrev.bind(this)}>
+                {"<"} Prev
+              </button>
+              <button className="out" onClick={this.onNext.bind(this)}>
+                Next {">"}
+              </button>
+            </div>
           </div>
         </ResizeWrapper>
       </Window>
