@@ -2,11 +2,12 @@ import React, { Component } from "react";
 
 import FileManagerFileIcon from "./components/FileManagerFileIcon";
 import FooterTab from "./components/FooterTab";
-import PDFFileIcon from "./components/SlideshowFileIcon";
+import SlideshowFileIcon from "./components/SlideshowFileIcon";
 import PhotoFileIcon from "./components/PhotoFileIcon";
 import rug from "./images/gallery/rug.jpg";
 import img1 from "./images/icons/display.png";
 import img2 from "./images/icons/file.png";
+import ArticleFileIcon from "./components/ArticleFileIcon";
 
 export default class App_ extends Component {
   constructor(props) {
@@ -72,7 +73,7 @@ export default class App_ extends Component {
             title={"rug.png"}
           />
 
-          <PDFFileIcon
+          <SlideshowFileIcon
             onAddWindow={this.addWindow.bind(this)}
             onRemoveWindow={this.removeWindow.bind(this)}
             onSelectWindow={this.selectWindow.bind(this)}
@@ -81,6 +82,13 @@ export default class App_ extends Component {
             title={".pdf"}
           />
         </FileManagerFileIcon>
+
+        <ArticleFileIcon
+          onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
+          title={"Article"}
+        ></ArticleFileIcon>
 
         {this.state.windows}
 
