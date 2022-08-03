@@ -14,8 +14,21 @@ export default class ArticleWindow extends Component {
       >
         <ResizeWrapper onCloseWindow={() => {}}>
           <TabbedWrapper
+            active={"0"}
             tabNames={["Tab 1", "Tab 2", "Tab 3"]}
-            content={["Content 1", "Content 2", "Content 3"]}
+            content={[
+              <TabbedWrapper
+                active={"0"}
+                tabNames={["Tab 1", "Tab 2", "Tab 3"]}
+                content={["Content 1", "Content 2", "Content 3"]}
+              />,
+              "string",
+              <TabbedWrapper
+                active={"0"}
+                tabNames={["Tab 7", "Tab 8", "Tab 9"]}
+                content={["Content 15", "Content 25", "Content 53"]}
+              />,
+            ]}
           />
         </ResizeWrapper>
       </Window>

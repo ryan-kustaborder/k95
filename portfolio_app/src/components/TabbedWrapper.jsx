@@ -4,19 +4,22 @@ export default class TabbedWrapper extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { active: 0 };
+    this.state = { active: this.props.active };
   }
 
-  setActive(newActive) {
-    this.setState({ active: newActive });
+  setActive(tabs, i) {
+    console.log(tabs);
+    tabs.setState({ active: i });
+    console.log(i + "from setActive");
   }
 
   render() {
+    console.log(this.state.active + "from render");
     const tabs = this.props.tabNames.map((tab, i) => {
       return (
         <button
           onClick={() => {
-            this.setActive(i);
+            this.setActive(this, i);
           }}
         >
           {tab}
