@@ -197,3 +197,32 @@ button {
     align-items: center;
     margin: 3px;
 }
+
+.tabset {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .tabset-tabs {
+    margin: 5px 5px 0px 5px;
+    display: flex;
+
+    button {
+      margin:0;
+      border-left: 2px solid var(--highlight);
+      border-top: 2px solid var(--highlight);
+      border-right: 2px solid var(--shadow);
+      border-bottom: none;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      width: 70px;
+    }
+  }
+
+  .tabset-content {
+    flex-grow: 2;
+    margin: 0 5px 5px 5px;
+  }
+}

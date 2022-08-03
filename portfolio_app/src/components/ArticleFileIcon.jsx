@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import PHOTO_ICON from "../images/icons/display.png";
 import ArticleWindow from "./ArticleWindow";

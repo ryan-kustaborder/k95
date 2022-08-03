@@ -12,7 +12,15 @@ export default class ArticleWindow extends Component {
         onSelectWindow={this.props.onSelectWindow}
       >
         <ResizeWrapper onCloseWindow={() => {}}>
-          <div className="blank-container">{this.props.children}</div>
+          <div className="tabset">
+            <div className="tabset-tabs">
+              <button>Tab 1</button>
+              <button>Tab 2</button>
+              <button>Tab 3</button>
+              <button>Tab 4</button>
+            </div>
+            <div className="tabset-content out">Content content content</div>
+          </div>
         </ResizeWrapper>
       </Window>
     );
