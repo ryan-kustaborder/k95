@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import p5 from "p5";
 
 import FileManagerFileIcon from "./components/FileManagerFileIcon";
 import FooterTab from "./components/FooterTab";
@@ -17,6 +18,26 @@ export default class App_ extends Component {
       windows: [],
       selected: null,
     };
+
+    this.testRef = React.createRef();
+
+    this.Sketch = (p) => {
+      p.setup = () => {
+        p.createCanvas(500, 500);
+
+        p.noStroke();
+        p.colorMode(p.HSB, 360, p.width, p.height);
+        p.radius = 100;
+      };
+
+      p.draw = () => {
+        p.circle(p.mouseX, 100, 100);
+      };
+    };
+  }
+
+  componentDidMount() {
+    this.myP5 = new p5(this.Sketch, this.testRef.current);
   }
 
   selectWindow(window) {
@@ -58,6 +79,7 @@ export default class App_ extends Component {
 
     return (
       <div className="App">
+        <div ref={this.testRef}></div>
         <FileManagerFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
