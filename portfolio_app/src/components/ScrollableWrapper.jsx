@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import resize from "../images/icons/resize.png";
 
 export default class ScrollableWrapper extends Component {
   constructor(props) {
@@ -61,8 +60,8 @@ export default class ScrollableWrapper extends Component {
   }
 
   render() {
-    var height = this.state.size.height;
-    var width = this.state.size.width;
+    //var height = this.state.size.height;
+    //var width = this.state.size.width;
 
     return <div className="scrollable">{this.props.children}</div>;
   }

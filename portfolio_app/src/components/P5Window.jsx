@@ -5,14 +5,18 @@ import sketch from "../sketches/sketch";
 
 import Window from "./Window";
 import ResizeWrapper from "./ResizableWrapper";
+import P5Wrapper from "./P5Wrapper";
 
 export default class P5Window extends Component {
   constructor(props) {
     super(props);
 
-    this.ref = React.createRef();
+    this.state = {
+      slider: 100,
+      frameRate: null,
+    };
 
-    this.state = { slider: 200 };
+    this.ref = React.createRef();
   }
 
   onSetAppState = (newState, cb) => this.setState(newState, cb);
@@ -22,19 +26,9 @@ export default class P5Window extends Component {
   componentDidMount() {
     this.myP5 = new p5(sketch, this.ref.current);
 
-    this.myP5.props = { slider: this.state.slider };
+    this.myP5.props = this.props.p5;
 
     this.myP5.onSetAppState = this.onSetAppState;
-  }
-
-  shouldComponentUpdate(nextProps) {
-    this.myP5.props = { slider: this.state.slider };
-    return false;
-  }
-
-  updateState() {
-    this.setState({ slider: this.state.slider + 20 });
-    console.log(this.state);
   }
 
   render() {
@@ -45,9 +39,20 @@ export default class P5Window extends Component {
         onSelectWindow={this.props.onSelectWindow}
       >
         <ResizeWrapper onCloseWindow={() => {}}>
-          <div ref={this.ref} className="blank-container"></div>
+          <P5Wrapper
+            p5Props={{ slider: this.state.slider }}
+            onSetAppState={this.onSetAppState}
+          ></P5Wrapper>
         </ResizeWrapper>
-        <button onClick={this.updateState.bind(this)}>Test</button>
+        <input
+          type="range"
+          min={5}
+          max={290}
+          step={1}
+          value={this.state.slider}
+          style={{ width: "90%", maxWidth: "900px" }}
+          onChange={this.onSliderChange}
+        />
       </Window>
     );
   }

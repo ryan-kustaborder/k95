@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import p5 from "p5";
 
 import FileManagerFileIcon from "./components/FileManagerFileIcon";
 import FooterTab from "./components/FooterTab";
@@ -65,7 +64,6 @@ export default class App_ extends Component {
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
-          image={rug}
           useDarkText={true}
           title={"rug.png"}
         />
