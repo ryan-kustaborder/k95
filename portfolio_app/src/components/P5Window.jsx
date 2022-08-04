@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import p5 from "p5";
 
+import sketch from "../sketches/sketch";
+
 import Window from "./Window";
 import ResizeWrapper from "./ResizableWrapper";
 
@@ -27,7 +29,9 @@ export default class P5Window extends Component {
   }
 
   componentDidMount() {
-    this.myP5 = new p5(this.sketch, this.ref.current);
+    this.myP5 = new p5(sketch, this.ref.current);
+
+    this.myP5.props = { slider: 300 };
   }
 
   render() {
