@@ -12,26 +12,29 @@ export default class P5Window extends Component {
 
     this.ref = React.createRef();
 
-    this.sketch = (p) => {
-      p.setup = () => {
-        p.createCanvas(500, 500);
-
-        p.noStroke();
-        p.colorMode(p.HSB, 360, p.width, p.height);
-        p.radius = 100;
-      };
-
-      p.draw = () => {
-        p.background(0);
-        p.circle(p.mouseX, 100, 100);
-      };
-    };
+    this.state = { slider: 200 };
   }
+
+  onSetAppState = (newState, cb) => this.setState(newState, cb);
+
+  onSliderChange = (event) => this.setState({ slider: +event.target.value });
 
   componentDidMount() {
     this.myP5 = new p5(sketch, this.ref.current);
 
-    this.myP5.props = { slider: 300 };
+    this.myP5.props = { slider: this.state.slider };
+
+    this.myP5.onSetAppState = this.onSetAppState;
+  }
+
+  shouldComponentUpdate(nextProps) {
+    this.myP5.props = { slider: this.state.slider };
+    return false;
+  }
+
+  updateState() {
+    this.setState({ slider: this.state.slider + 20 });
+    console.log(this.state);
   }
 
   render() {
@@ -44,6 +47,7 @@ export default class P5Window extends Component {
         <ResizeWrapper onCloseWindow={() => {}}>
           <div ref={this.ref} className="blank-container"></div>
         </ResizeWrapper>
+        <button onClick={this.updateState.bind(this)}>Test</button>
       </Window>
     );
   }
