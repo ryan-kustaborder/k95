@@ -56,6 +56,7 @@ img {
   padding: 1px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   .window-header {
     width: calc(100% - 5px);

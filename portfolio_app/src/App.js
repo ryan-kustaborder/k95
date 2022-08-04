@@ -9,6 +9,7 @@ import rug from "./images/gallery/rug.jpg";
 import img1 from "./images/icons/display.png";
 import img2 from "./images/icons/file.png";
 import ArticleFileIcon from "./components/ArticleFileIcon";
+import P5FileIcon from "./components/P5FileIcon";
 
 export default class App_ extends Component {
   constructor(props) {
@@ -18,26 +19,6 @@ export default class App_ extends Component {
       windows: [],
       selected: null,
     };
-
-    this.testRef = React.createRef();
-
-    this.Sketch = (p) => {
-      p.setup = () => {
-        p.createCanvas(500, 500);
-
-        p.noStroke();
-        p.colorMode(p.HSB, 360, p.width, p.height);
-        p.radius = 100;
-      };
-
-      p.draw = () => {
-        p.circle(p.mouseX, 100, 100);
-      };
-    };
-  }
-
-  componentDidMount() {
-    this.myP5 = new p5(this.Sketch, this.testRef.current);
   }
 
   selectWindow(window) {
@@ -80,6 +61,14 @@ export default class App_ extends Component {
     return (
       <div className="App">
         <div ref={this.testRef}></div>
+        <P5FileIcon
+          onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
+          image={rug}
+          useDarkText={true}
+          title={"rug.png"}
+        />
         <FileManagerFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
