@@ -129,17 +129,18 @@ export default class App_ extends Component {
     win.onSliderChange = (event) =>
       win.setState({ saturation: +event.target.value });
 
-    console.log(win.state.saturation);
-
     return (
-      <input
-        type="range"
-        min={0}
-        max={255}
-        step={1}
-        value={win.state.saturation}
-        onChange={win.onSliderChange}
-      />
+      <div className="Input-Container">
+        <p>Saturation</p>
+        <input
+          type="range"
+          min={0}
+          max={255}
+          step={1}
+          value={win.state.saturation}
+          onChange={win.onSliderChange}
+        />
+      </div>
     );
   }
 }

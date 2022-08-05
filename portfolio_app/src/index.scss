@@ -227,3 +227,18 @@ button {
     margin: 0 5px 5px 5px;
   }
 }
+
+.Input-Container {
+  border: 2px solid black;
+  margin: 5px;
+  border-radius: 2px;
+  padding: 12px;
+  position: relative;
+
+  p {
+    position: absolute;
+    top: -12px;
+    background-color: var(--light-gray);
+    padding: 0 8px;
+  }
+}

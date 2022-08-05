@@ -5,7 +5,7 @@ export default class ResizeWrapper extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      size: { width: 500, height: 300 },
+      size: { width: 800, height: 500 },
       dragging: false,
       rel: null,
     };
