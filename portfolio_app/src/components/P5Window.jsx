@@ -4,20 +4,22 @@ import Window from "./Window";
 import ResizeWrapper from "./ResizableWrapper";
 import P5Wrapper from "./P5Wrapper";
 
-import sketch from "../sketches/sketch";
-
 export default class P5Window extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { slider: 100 };
 
     this.ref = React.createRef();
   }
 
   onSetAppState = (newState, cb) => this.setState(newState, cb);
 
-  onSliderChange = (event) => this.setState({ slider: +event.target.value });
+  getSketch() {
+    return null;
+  }
+
+  getInputs() {
+    return <></>;
+  }
 
   render() {
     return (
@@ -28,20 +30,12 @@ export default class P5Window extends Component {
       >
         <ResizeWrapper onCloseWindow={() => {}}>
           <P5Wrapper
-            p5Props={{ slider: this.state.slider }}
+            p5Props={this.state}
             onSetAppState={this.onSetAppState}
-            sketch={sketch}
+            sketch={this.getSketch()}
           ></P5Wrapper>
         </ResizeWrapper>
-        <input
-          type="range"
-          min={5}
-          max={290}
-          step={1}
-          value={this.state.slider}
-          style={{ width: "90%", maxWidth: "900px" }}
-          onChange={this.onSliderChange}
-        />
+        {this.getInputs()}
       </Window>
     );
   }
