@@ -65,7 +65,7 @@ export default class App_ extends Component {
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
           useDarkText={true}
-          title={"rug.png"}
+          title={"sketch"}
         />
         <FileManagerFileIcon
           onAddWindow={this.addWindow.bind(this)}

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import p5 from "p5";
 
-import sketch from "../sketches/sketch";
-
 export default class P5Wrapper extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +14,7 @@ export default class P5Wrapper extends Component {
   };
 
   componentDidMount() {
-    this.canvas = new p5(sketch, this.ref.current);
+    this.canvas = new p5(this.props.sketch, this.ref.current);
     this.canvas.props = this.props.p5Props;
     this.canvas.onSetAppState = this.props.onSetAppState;
   }

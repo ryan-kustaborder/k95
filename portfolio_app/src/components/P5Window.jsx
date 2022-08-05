@@ -4,14 +4,13 @@ import Window from "./Window";
 import ResizeWrapper from "./ResizableWrapper";
 import P5Wrapper from "./P5Wrapper";
 
+import sketch from "../sketches/sketch";
+
 export default class P5Window extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      slider: 100,
-      frameRate: null,
-    };
+    this.state = { slider: 100 };
 
     this.ref = React.createRef();
   }
@@ -31,6 +30,7 @@ export default class P5Window extends Component {
           <P5Wrapper
             p5Props={{ slider: this.state.slider }}
             onSetAppState={this.onSetAppState}
+            sketch={sketch}
           ></P5Wrapper>
         </ResizeWrapper>
         <input

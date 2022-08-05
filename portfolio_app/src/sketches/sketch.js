@@ -1,4 +1,4 @@
-export default function (s) {
+export default function sketch(s) {
   s.props = {};
   s.onSetAppState = () => {};
 
@@ -7,10 +7,6 @@ export default function (s) {
   };
 
   s.draw = function () {
-    if (s.frameCount % 60 === 1) {
-      s.onSetAppState({ frameRate: s.frameRate().toFixed(1) });
-    }
-
     s.background(127, 0, 50);
     const weight = s.map(s.props.slider, 5, 290, 0, 10);
     s.strokeWeight(weight);
