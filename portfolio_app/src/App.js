@@ -9,6 +9,7 @@ import img1 from "./images/icons/display.png";
 import img2 from "./images/icons/file.png";
 import ArticleFileIcon from "./components/ArticleFileIcon";
 import P5FileIcon from "./components/P5FileIcon";
+import sketch from "./sketches/sketch";
 
 export default class App_ extends Component {
   constructor(props) {
@@ -69,6 +70,7 @@ export default class App_ extends Component {
           //
           initState={{ slider: 100 }}
           getInputs={this.getInputs}
+          sketch={sketch}
         />
         <FileManagerFileIcon
           onAddWindow={this.addWindow.bind(this)}

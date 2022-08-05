@@ -3,8 +3,6 @@ import FileIcon from "./FileIcon";
 import PHOTO_ICON from "../images/icons/display.png";
 import P5Window from "./P5Window";
 
-import sketch from "../sketches/sketch";
-
 export default class P5FileIcon extends FileIcon {
   onDoubleClick() {
     if (!this.state.window) {
@@ -13,7 +11,7 @@ export default class P5FileIcon extends FileIcon {
           title={this.props.title}
           onCloseWindow={this.onCloseWindow.bind(this)}
           onSelectWindow={this.props.onSelectWindow}
-          sketch={this.getSketch()}
+          sketch={this.props.sketch}
           initState={this.props.initState}
           getInputs={this.props.getInputs}
         ></P5Window>
@@ -26,9 +24,5 @@ export default class P5FileIcon extends FileIcon {
 
   getIcon() {
     return PHOTO_ICON;
-  }
-
-  getSketch() {
-    return sketch;
   }
 }
