@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.91fa6db2.css",
-    "main.js": "/portfolio/static/js/main.77bb31ec.js",
+    "main.css": "/portfolio/static/css/main.542def9d.css",
+    "main.js": "/portfolio/static/js/main.cda9cfc4.js",
     "static/media/rug.jpg": "/portfolio/static/media/rug.6486406e90f174391944.jpg",
     "static/media/LeviWindows.ttf": "/portfolio/static/media/LeviWindows.1418bf0ef20f202d5c85.ttf",
     "index.html": "/portfolio/index.html",
-    "main.91fa6db2.css.map": "/portfolio/static/css/main.91fa6db2.css.map",
-    "main.77bb31ec.js.map": "/portfolio/static/js/main.77bb31ec.js.map"
+    "main.542def9d.css.map": "/portfolio/static/css/main.542def9d.css.map",
+    "main.cda9cfc4.js.map": "/portfolio/static/js/main.cda9cfc4.js.map"
   },
   "entrypoints": [
-    "static/css/main.91fa6db2.css",
-    "static/js/main.77bb31ec.js"
+    "static/css/main.542def9d.css",
+    "static/js/main.cda9cfc4.js"
   ]
 }
