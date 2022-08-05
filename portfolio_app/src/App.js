@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 import FileManagerFileIcon from "./components/FileManagerFileIcon";
-import FooterTab from "./components/FooterTab";
-import SlideshowFileIcon from "./components/SlideshowFileIcon";
+import FooterTab from "./k95/FooterTab";
+import SlideshowFileIcon from "./k95/fileIcons/SlideshowFileIcon";
 import PhotoFileIcon from "./components/PhotoFileIcon";
 import rug from "./images/gallery/rug.jpg";
 import img1 from "./images/icons/display.png";

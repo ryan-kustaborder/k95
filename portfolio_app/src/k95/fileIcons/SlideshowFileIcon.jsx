@@ -1,20 +1,19 @@
 import React from "react";
 import FileIcon from "./FileIcon";
-import PhotoWindow from "./PhotoWindow";
 import PHOTO_ICON from "../images/icons/display.png";
+import SlideshowWindow from "../windows/SlideshowWindow";
 
-export default class PhotoFileIcon extends FileIcon {
+export default class PDFFileIcon extends FileIcon {
   onDoubleClick() {
     if (!this.state.window) {
       let window = (
-        <PhotoWindow
+        <SlideshowWindow
           title={this.props.title}
           key={this.props.image}
           onCloseWindow={this.onCloseWindow.bind(this)}
           onSelectWindow={this.props.onSelectWindow}
-        >
-          <img src={this.props.image} alt={this.props.alt}></img>
-        </PhotoWindow>
+          images={this.props.images}
+        ></SlideshowWindow>
       );
       this.setState({ window: window });
 

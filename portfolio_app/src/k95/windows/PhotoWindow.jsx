@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Window from "./Window";
-import ResizeWrapper from "./ResizableWrapper";
+import ResizeWrapper from "../wrappers/ResizableWrapper";
 
 export default class PhotoWindow extends Component {
   render() {

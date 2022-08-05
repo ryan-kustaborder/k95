@@ -1,5 +1,5 @@
 import React from "react";
-import FileIcon from "./FileIcon";
+import FileIcon from "../k95/fileIcons/FileIcon";
 import PHOTO_ICON from "../images/icons/display.png";
 import P5Window from "./P5Window";
 

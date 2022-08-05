@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Window from "./Window";
-import ResizeWrapper from "./ResizableWrapper";
-import ScrollableWrapper from "./ScrollableWrapper";
+import ResizeWrapper from "../wrappers/ResizableWrapper";
+import ScrollableWrapper from "../wrappers/ScrollableWrapper";
 
 export default class FileManagerWindow extends Component {
   render() {
