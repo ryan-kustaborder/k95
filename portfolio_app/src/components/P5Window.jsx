@@ -8,14 +8,12 @@ export default class P5Window extends Component {
   constructor(props) {
     super(props);
 
+    this.state = this.props.initState;
+
     this.ref = React.createRef();
   }
 
   onSetAppState = (newState, cb) => this.setState(newState, cb);
-
-  getSketch() {
-    return null;
-  }
 
   getInputs() {
     return <></>;
@@ -32,10 +30,10 @@ export default class P5Window extends Component {
           <P5Wrapper
             p5Props={this.state}
             onSetAppState={this.onSetAppState}
-            sketch={this.getSketch()}
+            sketch={this.props.sketch}
           ></P5Wrapper>
         </ResizeWrapper>
-        {this.getInputs()}
+        {this.props.getInputs(this)}
       </Window>
     );
   }
