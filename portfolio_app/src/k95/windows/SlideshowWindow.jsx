@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Window from "./Window";
 import ResizeWrapper from "../wrappers/ResizableWrapper";
@@ -6,10 +6,6 @@ import ResizeWrapper from "../wrappers/ResizableWrapper";
 import ScrollableWrapper from "../wrappers/ScrollableWrapper";
 
 export default class SlideshowWindow extends Window {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.setState({ current: 0 });
   }

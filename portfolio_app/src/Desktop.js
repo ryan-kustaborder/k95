@@ -4,7 +4,7 @@ import FooterTab from "./k95/FooterTab";
 import PhotoFileIcon from "./k95/fileIcons/PhotoFileIcon";
 import rug from "./files/gallery/rug.jpg";
 import SlideshowFileIcon from "./k95/fileIcons/SlideshowFileIcon";
-import FileManagerFileIcon from "./k95/fileIcons/FileManagerFileIcon";
+import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
 
 export default class Desktop extends Component {
   constructor(props) {
@@ -55,29 +55,29 @@ export default class Desktop extends Component {
 
     return (
       <div className="Desktop">
-        <PhotoFileIcon
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          image={rug}
-          useDarkText={true}
-          title={"Photo"}
-        />
-        <SlideshowFileIcon
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          images={[rug, "", rug]}
-          useDarkText={true}
-          title={"Photo Album"}
-        />
-
-        <FileManagerFileIcon
+        <FolderFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
           title={"File Manager"}
-        />
+        >
+          <PhotoFileIcon
+            onAddWindow={this.addWindow.bind(this)}
+            onRemoveWindow={this.removeWindow.bind(this)}
+            onSelectWindow={this.selectWindow.bind(this)}
+            image={rug}
+            useDarkText={true}
+            title={"Photo"}
+          />
+          <SlideshowFileIcon
+            onAddWindow={this.addWindow.bind(this)}
+            onRemoveWindow={this.removeWindow.bind(this)}
+            onSelectWindow={this.selectWindow.bind(this)}
+            images={[rug, "", rug]}
+            useDarkText={true}
+            title={"Photo Album"}
+          />
+        </FolderFileIcon>
 
         {this.state.windows}
 

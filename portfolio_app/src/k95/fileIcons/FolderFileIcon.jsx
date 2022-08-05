@@ -1,20 +1,20 @@
 import React from "react";
 import FileIcon from "./FileIcon";
-import GALLERY_ICON from "../../icons/documents.png";
-import FileManagerWindow from "../windows/FileManagerWindow";
+import ICON from "../../icons/documents.png";
+import FolderWindow from "../windows/FolderWindow";
 
-export default class FileManagerFileIcon extends FileIcon {
+export default class FolderFileIcon extends FileIcon {
   onDoubleClick() {
     if (!this.state.window) {
       let window = (
-        <FileManagerWindow
+        <FolderWindow
           title={this.props.title}
           key={"Window - " + this.props.title}
           onCloseWindow={this.onCloseWindow.bind(this)}
           onSelectWindow={this.props.onSelectWindow}
         >
           {this.props.children}
-        </FileManagerWindow>
+        </FolderWindow>
       );
       this.setState({ window: window });
 
@@ -23,6 +23,6 @@ export default class FileManagerFileIcon extends FileIcon {
   }
 
   getIcon() {
-    return GALLERY_ICON;
+    return ICON;
   }
 }
