@@ -2,36 +2,38 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import p5 from "p5";
 
-import sketch1 from "../sketches/sketch";
+import sketch from "../sketches/sketch";
 
 export default class P5Wrapper extends Component {
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+  }
+
   static propTypes = {
     p5Props: PropTypes.object.isRequired,
     onSetAppState: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
-    this.canvas1 = new p5(sketch1, "canvas1-container");
-    this.canvas1.props = this.props.p5Props;
-    this.canvas1.onSetAppState = this.props.onSetAppState;
+    this.canvas = new p5(sketch, this.ref.current);
+    this.canvas.props = this.props.p5Props;
+    this.canvas.onSetAppState = this.props.onSetAppState;
   }
 
   shouldComponentUpdate(nextProps) {
-    this.canvas1.props = nextProps.p5Props;
+    this.canvas.props = nextProps.p5Props;
     return false;
   }
 
   componentWillUnmount() {
-    this.canvas1.remove();
+    this.canvas.remove();
   }
 
   render() {
     return (
       <>
-        <div
-          id="canvas1-container"
-          style={{ width: "100%", textAlign: "center" }}
-        />
+        <div ref={this.ref} className="P5Wrapper" />
       </>
     );
   }

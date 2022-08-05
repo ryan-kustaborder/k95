@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import p5 from "p5";
-
-import sketch from "../sketches/sketch";
 
 import Window from "./Window";
 import ResizeWrapper from "./ResizableWrapper";
@@ -22,14 +19,6 @@ export default class P5Window extends Component {
   onSetAppState = (newState, cb) => this.setState(newState, cb);
 
   onSliderChange = (event) => this.setState({ slider: +event.target.value });
-
-  componentDidMount() {
-    this.myP5 = new p5(sketch, this.ref.current);
-
-    this.myP5.props = this.props.p5;
-
-    this.myP5.onSetAppState = this.onSetAppState;
-  }
 
   render() {
     return (
