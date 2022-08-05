@@ -4,6 +4,7 @@ import FooterTab from "./k95/FooterTab";
 import PhotoFileIcon from "./k95/fileIcons/PhotoFileIcon";
 import rug from "./files/gallery/rug.jpg";
 import SlideshowFileIcon from "./k95/fileIcons/SlideshowFileIcon";
+import FileManagerFileIcon from "./k95/fileIcons/FileManagerFileIcon";
 
 export default class Desktop extends Component {
   constructor(props) {
@@ -60,7 +61,7 @@ export default class Desktop extends Component {
           onSelectWindow={this.selectWindow.bind(this)}
           image={rug}
           useDarkText={true}
-          title={"rug.png"}
+          title={"Photo"}
         />
         <SlideshowFileIcon
           onAddWindow={this.addWindow.bind(this)}
@@ -68,7 +69,14 @@ export default class Desktop extends Component {
           onSelectWindow={this.selectWindow.bind(this)}
           images={[rug, "", rug]}
           useDarkText={true}
-          title={"rug.png"}
+          title={"Photo Album"}
+        />
+
+        <FileManagerFileIcon
+          onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
+          title={"File Manager"}
         />
 
         {this.state.windows}

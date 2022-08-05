@@ -1,6 +1,6 @@
 import React from "react";
 import FileIcon from "./FileIcon";
-import PHOTO_ICON from "../../icons/display.png";
+import ICON from "../../icons/photo-album.png";
 import SlideshowWindow from "../windows/SlideshowWindow";
 
 export default class SlideshowFileIcon extends FileIcon {
@@ -22,6 +22,6 @@ export default class SlideshowFileIcon extends FileIcon {
   }
 
   getIcon() {
-    return PHOTO_ICON;
+    return ICON;
   }
 }
