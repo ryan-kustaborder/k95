@@ -68,7 +68,7 @@ export default class App_ extends Component {
           useDarkText={true}
           title={"sketch"}
           //
-          initState={{ slider: 100 }}
+          initState={{ saturation: 100 }}
           getInputs={this.getInputs}
           sketch={sketch}
         />
@@ -127,16 +127,17 @@ export default class App_ extends Component {
 
   getInputs(win) {
     win.onSliderChange = (event) =>
-      win.setState({ slider: +event.target.value });
+      win.setState({ saturation: +event.target.value });
+
+    console.log(win.state.saturation);
 
     return (
       <input
         type="range"
-        min={5}
-        max={290}
+        min={0}
+        max={255}
         step={1}
-        value={win.state.slider}
-        style={{ width: "90%", maxWidth: "900px" }}
+        value={win.state.saturation}
         onChange={win.onSliderChange}
       />
     );
