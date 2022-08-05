@@ -18,11 +18,35 @@
 
   /* Desktop */
   .Desktop {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 128px 128px 128px 128px 128px;
+    grid-template-columns: 128px 128px 128px 128px 128px 128px  ;
     height: 100vh;
     background-color: #008081;
+
+    .blank-1 {
+      grid-column: span 1;
+    }
+
+    .blank-2 {
+      grid-column: span 2;
+    }
+
+    .blank-3 {
+      grid-column: span 3;
+    }
+
+    .blank-4 {
+      grid-column: span 4;
+    }
+
+    .blank-5 {
+      grid-column: span 5;
+    }
+
+    .blank-6 {
+      grid-column: span 6;
+    }
   }
 
 

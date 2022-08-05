@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 
-import rug from "./files/gallery/rug.jpg";
-import sketch from "./sketches/sketch";
-
 import FooterTab from "./k95/FooterTab";
-import PhotoFileIcon from "./k95/fileIcons/PhotoFileIcon";
-import AlbumFileIcon from "./k95/fileIcons/AlbumFileIcon";
 import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
-import P5FileIcon from "./k95/fileIcons/P5FileIcon";
 
 export default class Desktop extends Component {
   constructor(props) {
@@ -58,36 +52,61 @@ export default class Desktop extends Component {
 
     return (
       <div className="Desktop">
+        <div className="blank-6"></div>
+
         <FolderFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
-          title={"File Manager"}
-        >
-          <PhotoFileIcon
-            onAddWindow={this.addWindow.bind(this)}
-            onRemoveWindow={this.removeWindow.bind(this)}
-            onSelectWindow={this.selectWindow.bind(this)}
-            image={rug}
-            title={"Photo"}
-          />
-          <AlbumFileIcon
-            onAddWindow={this.addWindow.bind(this)}
-            onRemoveWindow={this.removeWindow.bind(this)}
-            onSelectWindow={this.selectWindow.bind(this)}
-            images={[rug, "", rug]}
-            title={"Photo Album"}
-          />
-        </FolderFileIcon>
+          title={"About"}
+        />
 
-        <P5FileIcon
+        <div className="blank-5"></div>
+
+        <FolderFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
-          title={"P5.JS"}
-          getInputs={this.getInputs}
-          sketch={sketch}
-          initState={{ saturation: 100 }}
+          title={"Gallery"}
+        />
+
+        <FolderFileIcon
+          onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
+          title={"Contact"}
+        />
+
+        <div className="blank-4"></div>
+
+        <FolderFileIcon
+          onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
+          title={"Games"}
+        />
+
+        <FolderFileIcon
+          onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
+          title={"Settings"}
+        />
+
+        <div className="blank-4"></div>
+
+        <FolderFileIcon
+          onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
+          title={"Accesibility"}
+        />
+
+        <FolderFileIcon
+          onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
+          title={"Websites"}
         />
 
         {this.state.windows}
