@@ -3,7 +3,7 @@ import FileIcon from "./FileIcon";
 import PHOTO_ICON from "../../icons/display.png";
 import SlideshowWindow from "../windows/SlideshowWindow";
 
-export default class PDFFileIcon extends FileIcon {
+export default class SlideshowFileIcon extends FileIcon {
   onDoubleClick() {
     if (!this.state.window) {
       let window = (

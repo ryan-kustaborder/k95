@@ -1,19 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import Window from "./Window";
 import ResizeWrapper from "../wrappers/ResizableWrapper";
 
-export default class PhotoWindow extends Component {
-  render() {
+export default class PhotoWindow extends Window {
+  getInnerContent() {
     return (
-      <Window
-        title={this.props.title}
-        onCloseWindow={this.props.onCloseWindow}
-        onSelectWindow={this.props.onSelectWindow}
-      >
-        <ResizeWrapper onCloseWindow={() => {}}>
-          <div className="blank-container">{this.props.children}</div>
-        </ResizeWrapper>
-      </Window>
+      <ResizeWrapper onCloseWindow={() => {}}>
+        <div className="blank-container">{this.props.children}</div>
+      </ResizeWrapper>
     );
   }
 }

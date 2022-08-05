@@ -1,15 +1,9 @@
 import React, { Component } from "react";
 
-import FileManagerFileIcon from "./k95/fileIcons/FileManagerFileIcon";
 import FooterTab from "./k95/FooterTab";
-import SlideshowFileIcon from "./k95/fileIcons/SlideshowFileIcon";
 import PhotoFileIcon from "./k95/fileIcons/PhotoFileIcon";
 import rug from "./files/gallery/rug.jpg";
-import img1 from "./icons/display.png";
-import img2 from "./icons/file.png";
-import ArticleFileIcon from "./k95/fileIcons/ArticleFileIcon";
-import P5FileIcon from "./k95/fileIcons/P5FileIcon";
-import sketch from "./sketches/sketch";
+import SlideshowFileIcon from "./k95/fileIcons/SlideshowFileIcon";
 
 export default class Desktop extends Component {
   constructor(props) {
@@ -60,49 +54,22 @@ export default class Desktop extends Component {
 
     return (
       <div className="Desktop">
-        <div ref={this.testRef}></div>
-        <P5FileIcon
+        <PhotoFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
+          image={rug}
           useDarkText={true}
-          title={"sketch"}
-          //
-          initState={{ saturation: 100 }}
-          getInputs={this.getInputs}
-          sketch={sketch}
+          title={"rug.png"}
         />
-        <FileManagerFileIcon
+        <SlideshowFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
-          title={"Gallery"}
-        >
-          <PhotoFileIcon
-            onAddWindow={this.addWindow.bind(this)}
-            onRemoveWindow={this.removeWindow.bind(this)}
-            onSelectWindow={this.selectWindow.bind(this)}
-            image={rug}
-            useDarkText={true}
-            title={"rug.png"}
-          />
-
-          <SlideshowFileIcon
-            onAddWindow={this.addWindow.bind(this)}
-            onRemoveWindow={this.removeWindow.bind(this)}
-            onSelectWindow={this.selectWindow.bind(this)}
-            images={[img1, img2, rug]}
-            useDarkText={true}
-            title={".pdf"}
-          />
-        </FileManagerFileIcon>
-
-        <ArticleFileIcon
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          title={"Article"}
-        ></ArticleFileIcon>
+          images={[rug, "", rug]}
+          useDarkText={true}
+          title={"rug.png"}
+        />
 
         {this.state.windows}
 

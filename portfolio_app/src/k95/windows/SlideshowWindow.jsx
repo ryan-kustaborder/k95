@@ -5,11 +5,13 @@ import ResizeWrapper from "../wrappers/ResizableWrapper";
 
 import ScrollableWrapper from "../wrappers/ScrollableWrapper";
 
-export default class SlideshowWindow extends Component {
+export default class SlideshowWindow extends Window {
   constructor(props) {
     super(props);
+  }
 
-    this.state = { current: 0 };
+  componentDidMount() {
+    this.setState({ current: 0 });
   }
 
   onPrev() {
@@ -25,6 +27,7 @@ export default class SlideshowWindow extends Component {
   }
 
   onNext() {
+    console.log(this);
     let i = this.state.current;
 
     if (i + 1 >= this.props.images.length) {
@@ -36,33 +39,27 @@ export default class SlideshowWindow extends Component {
     this.setState({ current: i });
   }
 
-  render() {
+  getInnerContent() {
     let currentImage = this.props.images[this.state.current];
 
     return (
-      <Window
-        title={this.props.title}
-        onCloseWindow={this.props.onCloseWindow}
-        onSelectWindow={this.props.onSelectWindow}
-      >
-        <ResizeWrapper onCloseWindow={() => {}}>
-          <div className="vertical-layout">
-            <ScrollableWrapper>
-              <div className="blank-container in">
-                <img src={currentImage} alt={this.props.alt}></img>
-              </div>
-            </ScrollableWrapper>
-            <div className="control-set">
-              <button className="out" onClick={this.onPrev.bind(this)}>
-                {"<"} Prev
-              </button>
-              <button className="out" onClick={this.onNext.bind(this)}>
-                Next {">"}
-              </button>
+      <ResizeWrapper onCloseWindow={() => {}}>
+        <div className="vertical-layout">
+          <ScrollableWrapper>
+            <div className="blank-container in">
+              <img src={currentImage} alt={this.props.alt}></img>
             </div>
+          </ScrollableWrapper>
+          <div className="control-set">
+            <button className="out" onClick={this.onPrev.bind(this)}>
+              {"<"} Prev
+            </button>
+            <button className="out" onClick={this.onNext.bind(this)}>
+              Next {">"}
+            </button>
           </div>
-        </ResizeWrapper>
-      </Window>
+        </div>
+      </ResizeWrapper>
     );
   }
 }

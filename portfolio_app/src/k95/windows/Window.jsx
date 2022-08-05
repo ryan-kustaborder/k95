@@ -73,6 +73,10 @@ export default class Window extends Component {
     this.props.onCloseWindow();
   }
 
+  getInnerContent() {
+    return this.props.children;
+  }
+
   render() {
     var top = this.state.pos.y;
     var left = this.state.pos.x;
@@ -103,7 +107,7 @@ export default class Window extends Component {
             ></img>
           </button>
         </div>
-        {this.props.children}
+        {this.getInnerContent()}
       </div>
     );
   }
