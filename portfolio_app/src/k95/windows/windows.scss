@@ -1,0 +1,22 @@
+.window {
+    min-width: 300px;
+    min-height: 200px;
+    background-color: var(--light-gray);
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  
+    .window-header {
+      width: calc(100% - 5px);
+      height: 24px;
+      background-color: var(--blue);
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2px;
+      color: var(--white);
+      user-select: none;
+    }
+  }
