@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 
+import rug from "./files/gallery/rug.jpg";
+import sketch from "./sketches/sketch";
+
 import FooterTab from "./k95/FooterTab";
 import PhotoFileIcon from "./k95/fileIcons/PhotoFileIcon";
-import rug from "./files/gallery/rug.jpg";
 import AlbumFileIcon from "./k95/fileIcons/AlbumFileIcon";
 import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
+import P5FileIcon from "./k95/fileIcons/P5FileIcon";
 
 export default class Desktop extends Component {
   constructor(props) {
@@ -66,7 +69,6 @@ export default class Desktop extends Component {
             onRemoveWindow={this.removeWindow.bind(this)}
             onSelectWindow={this.selectWindow.bind(this)}
             image={rug}
-            useDarkText={true}
             title={"Photo"}
           />
           <AlbumFileIcon
@@ -74,10 +76,19 @@ export default class Desktop extends Component {
             onRemoveWindow={this.removeWindow.bind(this)}
             onSelectWindow={this.selectWindow.bind(this)}
             images={[rug, "", rug]}
-            useDarkText={true}
             title={"Photo Album"}
           />
         </FolderFileIcon>
+
+        <P5FileIcon
+          onAddWindow={this.addWindow.bind(this)}
+          onRemoveWindow={this.removeWindow.bind(this)}
+          onSelectWindow={this.selectWindow.bind(this)}
+          title={"P5.JS"}
+          getInputs={this.getInputs}
+          sketch={sketch}
+          initState={{ saturation: 100 }}
+        />
 
         {this.state.windows}
 
