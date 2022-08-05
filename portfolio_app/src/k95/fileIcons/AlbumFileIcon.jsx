@@ -1,19 +1,19 @@
 import React from "react";
 import FileIcon from "./FileIcon";
 import ICON from "../../icons/photo-album.png";
-import SlideshowWindow from "../windows/SlideshowWindow";
+import AlbumWindow from "../windows/AlbumWindow";
 
-export default class SlideshowFileIcon extends FileIcon {
+export default class AlbumFileIcon extends FileIcon {
   onDoubleClick() {
     if (!this.state.window) {
       let window = (
-        <SlideshowWindow
+        <AlbumWindow
           title={this.props.title}
           key={this.props.image}
           onCloseWindow={this.onCloseWindow.bind(this)}
           onSelectWindow={this.props.onSelectWindow}
           images={this.props.images}
-        ></SlideshowWindow>
+        ></AlbumWindow>
       );
       this.setState({ window: window });
 

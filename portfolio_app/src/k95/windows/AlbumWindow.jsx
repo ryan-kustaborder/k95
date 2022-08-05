@@ -5,7 +5,7 @@ import ResizeWrapper from "../wrappers/ResizableWrapper";
 
 import ScrollableWrapper from "../wrappers/ScrollableWrapper";
 
-export default class SlideshowWindow extends Window {
+export default class AlbumWindow extends Window {
   componentDidMount() {
     this.setState({ current: 0 });
   }

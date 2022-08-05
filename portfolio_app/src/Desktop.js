@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import FooterTab from "./k95/FooterTab";
 import PhotoFileIcon from "./k95/fileIcons/PhotoFileIcon";
 import rug from "./files/gallery/rug.jpg";
-import SlideshowFileIcon from "./k95/fileIcons/SlideshowFileIcon";
+import AlbumFileIcon from "./k95/fileIcons/AlbumFileIcon";
 import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
 
 export default class Desktop extends Component {
@@ -69,7 +69,7 @@ export default class Desktop extends Component {
             useDarkText={true}
             title={"Photo"}
           />
-          <SlideshowFileIcon
+          <AlbumFileIcon
             onAddWindow={this.addWindow.bind(this)}
             onRemoveWindow={this.removeWindow.bind(this)}
             onSelectWindow={this.selectWindow.bind(this)}
