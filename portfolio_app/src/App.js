@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
-import FileManagerFileIcon from "./components/FileManagerFileIcon";
+import FileManagerFileIcon from "./k95/fileIcons/FileManagerFileIcon";
 import FooterTab from "./k95/FooterTab";
 import SlideshowFileIcon from "./k95/fileIcons/SlideshowFileIcon";
-import PhotoFileIcon from "./components/PhotoFileIcon";
-import rug from "./images/gallery/rug.jpg";
-import img1 from "./images/icons/display.png";
-import img2 from "./images/icons/file.png";
-import ArticleFileIcon from "./components/ArticleFileIcon";
-import P5FileIcon from "./components/P5FileIcon";
+import PhotoFileIcon from "./k95/fileIcons/PhotoFileIcon";
+import rug from "./files/gallery/rug.jpg";
+import img1 from "./icons/display.png";
+import img2 from "./icons/file.png";
+import ArticleFileIcon from "./k95/fileIcons/ArticleFileIcon";
+import P5FileIcon from "./k95/fileIcons/P5FileIcon";
 import sketch from "./sketches/sketch";
 
 export default class App_ extends Component {

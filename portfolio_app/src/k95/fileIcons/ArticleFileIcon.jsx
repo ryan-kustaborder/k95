@@ -1,8 +1,8 @@
 import React from "react";
 
-import PHOTO_ICON from "../images/icons/display.png";
-import ArticleWindow from "./ArticleWindow";
-import FileIcon from "../k95/fileIcons/FileIcon";
+import PHOTO_ICON from "../../icons/display.png";
+import ArticleWindow from "../windows/ArticleWindow";
+import FileIcon from "./FileIcon";
 
 export default class ArticleFileIcon extends FileIcon {
   onDoubleClick() {

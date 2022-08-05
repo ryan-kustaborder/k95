@@ -1,7 +1,7 @@
 import React from "react";
-import FileIcon from "../k95/fileIcons/FileIcon";
-import GALLERY_ICON from "../images/icons/documents.png";
-import FileManagerWindow from "./FileManagerWindow";
+import FileIcon from "./FileIcon";
+import GALLERY_ICON from "../../icons/documents.png";
+import FileManagerWindow from "../windows/FileManagerWindow";
 
 export default class FileManagerFileIcon extends FileIcon {
   onDoubleClick() {

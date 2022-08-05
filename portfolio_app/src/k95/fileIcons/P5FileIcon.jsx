@@ -1,7 +1,7 @@
 import React from "react";
-import FileIcon from "../k95/fileIcons/FileIcon";
-import PHOTO_ICON from "../images/icons/display.png";
-import P5Window from "./P5Window";
+import FileIcon from "./FileIcon";
+import PHOTO_ICON from "../../icons/display.png";
+import P5Window from "../windows/P5Window";
 
 export default class P5FileIcon extends FileIcon {
   onDoubleClick() {

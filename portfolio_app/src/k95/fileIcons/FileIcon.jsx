@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import file from "../images/icons/file.png";
+import file from "../../icons/file.png";
 import Window from "../windows/Window";
 
 export default class FileIcon extends Component {

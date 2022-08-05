@@ -1,6 +1,6 @@
 import React from "react";
 import FileIcon from "./FileIcon";
-import PHOTO_ICON from "../images/icons/display.png";
+import PHOTO_ICON from "../../icons/display.png";
 import SlideshowWindow from "../windows/SlideshowWindow";
 
 export default class PDFFileIcon extends FileIcon {

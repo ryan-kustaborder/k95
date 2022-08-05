@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CLOSE_ICON from "../images/icons/x.png";
+import CLOSE_ICON from "../../icons/x.png";
 
 export default class Window extends Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import resize from "../images/icons/resize.png";
+import resize from "../../icons/resize.png";
 
 export default class ResizeWrapper extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import ResizeWrapper from "./ResizableWrapper";
-import TabbedWrapper from "./TabbedWrapper";
+import ResizeWrapper from "../wrappers/ResizableWrapper";
+import TabbedWrapper from "../wrappers/TabbedWrapper";
 import Window from "./Window";
 
 export default class ArticleWindow extends Component {
