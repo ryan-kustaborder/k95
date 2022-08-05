@@ -66,6 +66,9 @@ export default class App_ extends Component {
           onSelectWindow={this.selectWindow.bind(this)}
           useDarkText={true}
           title={"sketch"}
+          //
+          initState={{ slider: 100 }}
+          getInputs={this.getInputs}
         />
         <FileManagerFileIcon
           onAddWindow={this.addWindow.bind(this)}
@@ -117,6 +120,23 @@ export default class App_ extends Component {
           <button className="button in">11:27 p.m.</button>
         </div>
       </div>
+    );
+  }
+
+  getInputs(win) {
+    win.onSliderChange = (event) =>
+      win.setState({ slider: +event.target.value });
+
+    return (
+      <input
+        type="range"
+        min={5}
+        max={290}
+        step={1}
+        value={win.state.slider}
+        style={{ width: "90%", maxWidth: "900px" }}
+        onChange={win.onSliderChange}
+      />
     );
   }
 }

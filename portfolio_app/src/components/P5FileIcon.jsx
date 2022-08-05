@@ -14,8 +14,8 @@ export default class P5FileIcon extends FileIcon {
           onCloseWindow={this.onCloseWindow.bind(this)}
           onSelectWindow={this.props.onSelectWindow}
           sketch={this.getSketch()}
-          initState={this.getInitState()}
-          getInputs={this.getInputs}
+          initState={this.props.initState}
+          getInputs={this.props.getInputs}
         ></P5Window>
       );
       this.setState({ window: window });
@@ -24,32 +24,11 @@ export default class P5FileIcon extends FileIcon {
     }
   }
 
-  getInitState() {
-    return { slider: 100 };
-  }
-
   getIcon() {
     return PHOTO_ICON;
   }
 
   getSketch() {
     return sketch;
-  }
-
-  getInputs(win) {
-    win.onSliderChange = (event) =>
-      win.setState({ slider: +event.target.value });
-
-    return (
-      <input
-        type="range"
-        min={5}
-        max={290}
-        step={1}
-        value={win.state.slider}
-        style={{ width: "90%", maxWidth: "900px" }}
-        onChange={win.onSliderChange}
-      />
-    );
   }
 }
