@@ -11,7 +11,7 @@ import ArticleFileIcon from "./k95/fileIcons/ArticleFileIcon";
 import P5FileIcon from "./k95/fileIcons/P5FileIcon";
 import sketch from "./sketches/sketch";
 
-export default class App_ extends Component {
+export default class Desktop extends Component {
   constructor(props) {
     super(props);
 
@@ -59,7 +59,7 @@ export default class App_ extends Component {
     ));
 
     return (
-      <div className="App">
+      <div className="Desktop">
         <div ref={this.testRef}></div>
         <P5FileIcon
           onAddWindow={this.addWindow.bind(this)}

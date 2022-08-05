@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
-import App from "./App";
+import "./variables.scss";
+import "./main.scss";
+
+import "./k95/imports";
+import Desktop from "./Desktop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(<Desktop />);

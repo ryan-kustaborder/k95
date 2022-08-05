@@ -1,0 +1,50 @@
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Levi Windows';
+  }
+
+  /* Base Tags */
+  img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+  
+  p {
+    font-size: var(--p_size);
+  }
+
+  /* Desktop */
+  .Desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #008081;
+  }
+
+
+  /* Borders */
+  .in {
+    border-left: 2px solid var(--shadow);
+    border-top: 2px solid var(--shadow);
+    border-right: 2px solid var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+  }
+  
+  .out {
+    border-left: 2px solid var(--highlight);
+    border-top: 2px solid var(--highlight);
+    border-right: 2px solid var(--shadow);
+    border-bottom: 2px solid var(--shadow);
+  }
+
+  /* Layout */
+  .vertical-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+      overflow: hidden;
+  }
