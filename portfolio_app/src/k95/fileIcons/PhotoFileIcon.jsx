@@ -14,6 +14,7 @@ export default class PhotoFileIcon extends FileIcon {
           onSelectWindow={this.props.onSelectWindow}
         >
           <img src={this.props.image} alt={this.props.alt}></img>
+          test
         </PhotoWindow>
       );
       this.setState({ window: window });

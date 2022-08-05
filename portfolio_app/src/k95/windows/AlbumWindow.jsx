@@ -23,7 +23,6 @@ export default class AlbumWindow extends Window {
   }
 
   onNext() {
-    console.log(this);
     let i = this.state.current;
 
     if (i + 1 >= this.props.images.length) {

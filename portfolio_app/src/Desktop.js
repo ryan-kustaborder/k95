@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import FooterTab from "./k95/FooterTab";
 import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
+import GalleryFolder from "./files/gallery/GalleryFolder";
 
 export default class Desktop extends Component {
   constructor(props) {
@@ -63,7 +64,7 @@ export default class Desktop extends Component {
 
         <div className="blank-5"></div>
 
-        <FolderFileIcon
+        <GalleryFolder
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
