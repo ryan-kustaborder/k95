@@ -4,6 +4,7 @@ import Window from "./Window";
 import ResizeWrapper from "../wrappers/ResizableWrapper";
 
 import ScrollableWrapper from "../wrappers/ScrollableWrapper";
+import BlankContainer from "../wrappers/BlankContainer";
 
 export default class AlbumWindow extends Window {
   componentDidMount() {
@@ -41,9 +42,9 @@ export default class AlbumWindow extends Window {
       <ResizeWrapper onCloseWindow={() => {}}>
         <div className="vertical-layout">
           <ScrollableWrapper>
-            <div className="blank-container in">
+            <BlankContainer>
               <img src={currentImage} alt={this.props.alt}></img>
-            </div>
+            </BlankContainer>
           </ScrollableWrapper>
           <div className="control-set">
             <button className="out" onClick={this.onPrev.bind(this)}>

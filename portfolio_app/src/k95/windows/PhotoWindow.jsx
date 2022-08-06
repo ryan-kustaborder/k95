@@ -1,12 +1,13 @@
 import React from "react";
 import Window from "./Window";
 import ResizeWrapper from "../wrappers/ResizableWrapper";
+import BlankContainer from "../wrappers/BlankContainer";
 
 export default class PhotoWindow extends Window {
   getInnerContent() {
     return (
       <ResizeWrapper onCloseWindow={() => {}}>
-        <div className="blank-container">{this.props.children}</div>
+        <BlankContainer>{this.props.children}</BlankContainer>
       </ResizeWrapper>
     );
   }

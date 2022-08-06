@@ -7,7 +7,7 @@ export default class TextEditorWindow extends Component {
     return (
       <Window onCloseWindow={() => {}}>
         <ResizeWrapper onCloseWindow={() => {}}>
-          <div className="blank-container"></div>
+          <BlankContainer />
         </ResizeWrapper>
       </Window>
     );

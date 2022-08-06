@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Window from "./Window";
-import ResizeWrapper from "../wrappers/ResizableWrapper";
 import P5Wrapper from "../wrappers/P5Wrapper";
 
 export default class P5Window extends Component {
