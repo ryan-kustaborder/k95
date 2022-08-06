@@ -8,11 +8,6 @@ export default class P5Wrapper extends Component {
     this.ref = React.createRef();
   }
 
-  static propTypes = {
-    p5Props: PropTypes.object.isRequired,
-    onSetAppState: PropTypes.func.isRequired,
-  };
-
   componentDidMount() {
     this.canvas = new p5(this.props.sketch, this.ref.current);
     this.canvas.props = this.props.p5Props;

@@ -31,8 +31,10 @@ export default class GalleryFolder extends Component {
           title={"sketch.p5"}
           useDarkText={true}
           sketch={_sketch}
-          initState={{ saturation: 100 }}
-          getInputs={() => {}}
+          initState={{ saturation: 100, width: 300, height: 300 }}
+          getInputs={() => {
+            return <p>Controls</p>;
+          }}
         ></P5FileIcon>
       </FolderFileIcon>
     );

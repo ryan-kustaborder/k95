@@ -4,8 +4,12 @@ import resize from "../../icons/resize.png";
 export default class ResizeWrapper extends Component {
   constructor(props) {
     super(props);
+
+    let w = this.props.width ? this.props.width : 800;
+    let h = this.props.height ? this.props.height : 500;
+
     this.state = {
-      size: { width: 800, height: 500 },
+      size: { width: w, height: h },
       dragging: false,
       rel: null,
     };

@@ -4,39 +4,37 @@ import Window from "./Window";
 import ResizeWrapper from "../wrappers/ResizableWrapper";
 import P5Wrapper from "../wrappers/P5Wrapper";
 
-export default class P5Window extends Component {
+export default class P5Window extends Window {
   constructor(props) {
     super(props);
-
-    this.state = this.props.initState;
 
     this.ref = React.createRef();
   }
 
-  onSetAppState = (newState, cb) => this.setState(newState, cb);
-
-  getInputs() {
-    return <></>;
+  componentDidMount() {
+    this.setState({ p5Props: this.props.initState });
   }
 
-  render() {
+  onSetAppState = (newState, cb) => this.setState(newState, cb);
+
+  getInnerContent() {
     return (
-      <Window
-        title={this.props.title}
-        onCloseWindow={this.props.onCloseWindow}
-        onSelectWindow={this.props.onSelectWindow}
+      <ResizeWrapper
+        width={this.props.initState.width}
+        height={this.props.initState.height}
+        onCloseWindow={() => {}}
       >
-        <ResizeWrapper onCloseWindow={() => {}}>
-          <div className="vertical-layout">
+        <div className="vertical-layout">
+          <div className="blank-container in">
             <P5Wrapper
-              p5Props={this.state}
+              p5Props={this.state.p5Props}
               onSetAppState={this.onSetAppState}
               sketch={this.props.sketch}
             ></P5Wrapper>
-            {this.props.getInputs(this)}
           </div>
-        </ResizeWrapper>
-      </Window>
+          {this.props.getInputs(this)}
+        </div>
+      </ResizeWrapper>
     );
   }
 }

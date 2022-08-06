@@ -1,6 +1,7 @@
 export default function sketch(_p5) {
   _p5.setup = function () {
-    _p5.createCanvas(250, 250);
+    console.log(_p5);
+    _p5.createCanvas(300, 300);
     _p5.background(0);
     _p5.noStroke();
     _p5.colorMode(_p5.HSB, 360, _p5.width, _p5.height);
