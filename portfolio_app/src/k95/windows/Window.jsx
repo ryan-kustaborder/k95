@@ -13,6 +13,10 @@ export default class Window extends Component {
     this.ref = React.createRef();
   }
 
+  componentDidMount() {
+    this.props.onSelectWindow(this);
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.state.dragging && !prevState.dragging) {
       document.addEventListener("mousemove", this.onMouseMove.bind(this));
