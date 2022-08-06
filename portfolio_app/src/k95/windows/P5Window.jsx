@@ -15,26 +15,20 @@ export default class P5Window extends Window {
     this.setState({ p5Props: this.props.initState });
   }
 
-  onSetAppState = (newState, cb) => this.setState(newState, cb);
-
   getInnerContent() {
     return (
-      <ResizeWrapper
-        width={this.props.initState.width}
-        height={this.props.initState.height}
-        onCloseWindow={() => {}}
-      >
-        <div className="vertical-layout">
-          <div className="blank-container in">
-            <P5Wrapper
-              p5Props={this.state.p5Props}
-              onSetAppState={this.onSetAppState}
-              sketch={this.props.sketch}
-            ></P5Wrapper>
-          </div>
-          {this.props.getInputs(this)}
+      <div className="vertical-layout">
+        <div className="blank-container in">
+          <P5Wrapper
+            p5Props={this.state.p5Props}
+            onSetAppState={this.props.onSetAppState}
+            sketch={this.props.sketch}
+            height={this.props.height}
+            width={this.props.width}
+          ></P5Wrapper>
         </div>
-      </ResizeWrapper>
+        {this.props.getInputs(this)}
+      </div>
     );
   }
 }

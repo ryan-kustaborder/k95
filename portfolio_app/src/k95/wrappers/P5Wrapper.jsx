@@ -6,7 +6,13 @@ export default class P5Wrapper extends Component {
   constructor(props) {
     super(props);
     this.ref = React.createRef();
+    console.log(this.props);
   }
+
+  static propTypes = {
+    p5Props: PropTypes.object.isRequired,
+    onSetAppState: PropTypes.func.isRequired,
+  };
 
   componentDidMount() {
     this.canvas = new p5(this.props.sketch, this.ref.current);
@@ -26,7 +32,14 @@ export default class P5Wrapper extends Component {
   render() {
     return (
       <>
-        <div ref={this.ref} className="P5Wrapper" />
+        <div
+          ref={this.ref}
+          className="P5Wrapper"
+          style={{
+            height: this.props.height + "px",
+            width: this.props.width + "px",
+          }}
+        />
       </>
     );
   }

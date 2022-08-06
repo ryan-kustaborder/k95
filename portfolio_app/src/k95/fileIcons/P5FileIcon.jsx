@@ -11,6 +11,9 @@ export default class P5FileIcon extends FileIcon {
           title={this.props.title}
           onCloseWindow={this.onCloseWindow.bind(this)}
           onSelectWindow={this.props.onSelectWindow}
+          onSetAppState={this.props.onSetAppState}
+          width={this.props.width}
+          height={this.props.height}
           sketch={this.props.sketch}
           initState={this.props.initState}
           getInputs={this.props.getInputs}
