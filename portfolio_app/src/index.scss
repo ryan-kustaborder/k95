@@ -83,19 +83,3 @@ button {
   }
 }
 
-.Input-Container {
-  border: 2px solid var(--medium-gray);
-  box-shadow: inset 1px 1px 0px 1px var(--highlight), 1px 1px 0px 1px var(--highlight);
-
-  margin: 5px;
-  margin-top: 16px;
-  padding: 12px;
-  position: relative;
-
-  p {
-    position: absolute;
-    top: -16px;
-    background-color: var(--light-gray);
-    padding: 0 8px;
-  }
-}

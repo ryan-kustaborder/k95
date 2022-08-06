@@ -130,23 +130,4 @@ export default class Desktop extends Component {
       </div>
     );
   }
-
-  getInputs(win) {
-    win.onSliderChange = (event) =>
-      win.setState({ saturation: +event.target.value });
-
-    return (
-      <div className="Input-Container">
-        <p>Saturation</p>
-        <input
-          type="range"
-          min={0}
-          max={255}
-          step={1}
-          value={win.state.saturation}
-          onChange={win.onSliderChange}
-        />
-      </div>
-    );
-  }
 }

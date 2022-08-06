@@ -1,3 +1,5 @@
+import Slider from "../k95/inputs/Slider";
+
 const title = "HSB_Circle.p5";
 const size = { width: 400, height: 400 };
 
@@ -12,14 +14,14 @@ function getInputs(win) {
   return (
     <div className="Input-Container">
       <p>Saturation</p>
-      <input
-        type="range"
-        min={0}
-        max={255}
-        step={1}
-        value={win.state.saturation}
-        onChange={win.onSliderChange}
-      />
+
+      <div>
+        <Slider
+          bounds={{ min: 0, max: 255, step: 1 }}
+          value={win.state.saturation}
+          onChange={win.onSliderChange}
+        />
+      </div>
     </div>
   );
 }
