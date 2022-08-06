@@ -22,18 +22,16 @@ export default class P5Window extends Component {
         onCloseWindow={this.props.onCloseWindow}
         onSelectWindow={this.props.onSelectWindow}
       >
-        <ResizeWrapper onCloseWindow={() => {}}>
-          <div className="vertical-layout">
-            <P5Wrapper
-              p5Props={this.state}
-              onSetAppState={this.onSetAppState}
-              sketch={this.props.sketch}
-              height={this.props.height}
-              width={this.props.width}
-            ></P5Wrapper>
-            {this.props.getInputs(this)}
-          </div>
-        </ResizeWrapper>
+        <div className="vertical-layout">
+          <P5Wrapper
+            p5Props={this.state}
+            onSetAppState={this.onSetAppState}
+            sketch={this.props.sketch}
+            height={this.props.height}
+            width={this.props.width}
+          ></P5Wrapper>
+          {this.props.getInputs(this)}
+        </div>
       </Window>
     );
   }

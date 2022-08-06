@@ -44,8 +44,6 @@ export default class GalleryFolder extends Component {
     win.onSliderChange = (event) =>
       win.setState({ saturation: +event.target.value });
 
-    console.log(win);
-
     return (
       <div className="Input-Container">
         <p>Saturation</p>

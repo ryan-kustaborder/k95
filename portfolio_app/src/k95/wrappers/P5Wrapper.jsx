@@ -5,7 +5,6 @@ import p5 from "p5";
 export default class P5Wrapper extends Component {
   constructor(props) {
     super(props);
-    console.log("cons");
     this.ref = React.createRef();
   }
 
@@ -15,7 +14,6 @@ export default class P5Wrapper extends Component {
   };
 
   componentDidMount() {
-    console.log("mount 2", this.props);
     this.canvas = new p5(this.props.sketch, this.ref.current);
     this.canvas.props = this.props.p5Props;
     this.canvas.onSetAppState = this.props.onSetAppState;
@@ -31,7 +29,6 @@ export default class P5Wrapper extends Component {
   }
 
   render() {
-    console.log("render 2");
     return (
       <>
         <div
