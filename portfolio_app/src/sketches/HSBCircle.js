@@ -1,6 +1,32 @@
-export default function sketch(_p5) {
+const title = "HSB_Circle.p5";
+const size = { width: 400, height: 400 };
+
+const initState = {
+  saturation: 100,
+};
+
+function getInputs(win) {
+  win.onSliderChange = (event) =>
+    win.setState({ saturation: +event.target.value });
+
+  return (
+    <div className="Input-Container">
+      <p>Saturation</p>
+      <input
+        type="range"
+        min={0}
+        max={255}
+        step={1}
+        value={win.state.saturation}
+        onChange={win.onSliderChange}
+      />
+    </div>
+  );
+}
+
+function sketch(_p5) {
   _p5.setup = function () {
-    _p5.createCanvas(400, 400);
+    _p5.createCanvas(size.width, size.height);
     _p5.background(0);
     _p5.noStroke();
     _p5.colorMode(_p5.HSB, 360, _p5.width, _p5.height);
@@ -62,3 +88,11 @@ export default function sketch(_p5) {
     }
   };
 }
+
+export const HSBCircle = {
+  sketch: sketch,
+  title: title,
+  size: size,
+  initState: initState,
+  getInputs: getInputs,
+};
