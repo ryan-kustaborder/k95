@@ -8,11 +8,6 @@ import PhotoFileIcon from "../../k95/fileIcons/PhotoFileIcon";
 import P5FileIcon from "../../k95/fileIcons/P5FileIcon";
 
 export default class GalleryFolder extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { saturation: 100 };
-  }
-
   render() {
     return (
       <FolderFileIcon
@@ -38,31 +33,31 @@ export default class GalleryFolder extends Component {
           width={400}
           height={400}
           sketch={_sketch}
-          initState={{ saturation: this.state.saturation }}
-          onSetAppState={this.onSetAppState.bind(this)}
-          getInputs={(win) => {
-            return (
-              <div style={{ textAlign: "center" }}>
-                <input
-                  type="range"
-                  min={5}
-                  max={290}
-                  step={1}
-                  value={win.state.saturation}
-                  style={{ width: "90%", maxWidth: "900px" }}
-                  onChange={win.onSliderChange}
-                />
-              </div>
-            );
-          }}
+          initState={{ saturation: 100 }}
+          getInputs={this.getInputs}
         ></P5FileIcon>
       </FolderFileIcon>
     );
   }
 
-  onSliderChange = (event) => {
-    this.setState({ saturation: +event.target.value });
-  };
+  getInputs(win) {
+    win.onSliderChange = (event) =>
+      win.setState({ saturation: +event.target.value });
 
-  onSetAppState = (newState, cb) => this.setState(newState, cb);
+    console.log(win);
+
+    return (
+      <div className="Input-Container">
+        <p>Saturation</p>
+        <input
+          type="range"
+          min={0}
+          max={255}
+          step={1}
+          value={win.state.saturation}
+          onChange={win.onSliderChange}
+        />
+      </div>
+    );
+  }
 }
