@@ -13,10 +13,11 @@ function getInputs(win) {
 
   return (
     <div className="Input-Container">
-      <p>Saturation</p>
+      <p>Controls</p>
 
       <div>
         <Slider
+          label={"Saturation:"}
           bounds={{ min: 0, max: 255, step: 1 }}
           value={win.state.saturation}
           onChange={win.onSliderChange}
