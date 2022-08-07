@@ -5,7 +5,7 @@ import _rug from "./rug.jpg";
 import FolderFileIcon from "../../k95/fileIcons/FolderFileIcon";
 import PhotoFileIcon from "../../k95/fileIcons/PhotoFileIcon";
 import P5FileIcon from "../../k95/fileIcons/P5FileIcon";
-import { HSBCircle } from "../../sketches/HSBCircle";
+import HSBCircle from "../../sketches/HSBCircle";
 import HSBGrid from "../../sketches/HSBGrid";
 
 export default class GalleryFolder extends Component {

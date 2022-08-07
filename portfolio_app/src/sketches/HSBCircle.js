@@ -87,10 +87,12 @@ function sketch(_p5) {
   };
 }
 
-export const HSBCircle = {
+const HSBCircle = {
   sketch: sketch,
   title: title,
   size: size,
   initState: initState,
   getInputs: getInputs,
 };
+
+export default HSBCircle;
