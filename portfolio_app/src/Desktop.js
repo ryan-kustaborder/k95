@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import FooterTab from "./k95/FooterTab";
 import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
 import GalleryFolder from "./files/gallery/GalleryFolder";
+import Clock from "./k95/Clock";
 
 export default class Desktop extends Component {
   constructor(props) {
@@ -125,7 +126,7 @@ export default class Desktop extends Component {
             Start
           </button>
           {tabs}
-          <button className="button in">11:27 p.m.</button>
+          <Clock />
         </div>
       </div>
     );

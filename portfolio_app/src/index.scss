@@ -1,4 +1,14 @@
+.Clock {
+  margin: 4px;
+  width: 80px;
+  text-align: center;
+  height: 70%;
 
+  border-left: 2px solid var(--medium-gray);
+  border-top: 2px solid var(--medium-gray);
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+}
 
 .blank-container {
   background-color: var(--white);
