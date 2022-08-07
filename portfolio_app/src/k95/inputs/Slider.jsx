@@ -16,8 +16,8 @@ export default class Slider extends Component {
             list="steplist"
           />
           <div className="ticks">
-            <span>0</span>
-            <span>255</span>
+            <span>{this.props.bounds.min}</span>
+            <span>{this.props.bounds.max}</span>
           </div>
         </div>
       </div>

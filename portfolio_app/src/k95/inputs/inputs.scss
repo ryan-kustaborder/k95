@@ -38,6 +38,16 @@
               display: flex;
               flex-direction: row;
               justify-content: space-between;
+
+              &>span {
+                /* Disable selecting of labels */
+                -webkit-user-select:none;
+                -khtml-user-select:none;
+                -moz-user-select:none;
+                -o-user-select:none;
+                user-select:none;
+                pointer-events:none;
+              }
             }
         }
     }

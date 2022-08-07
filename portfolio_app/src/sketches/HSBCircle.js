@@ -4,12 +4,20 @@ const title = "HSB_Circle.p5";
 const size = { width: 400, height: 400 };
 
 const initState = {
-  saturation: 100,
+  saturation: 255,
+  brightness: 255,
+  segments: 24,
 };
 
 function getInputs(win) {
-  win.onSliderChange = (event) =>
+  win.onSaturationChange = (event) =>
     win.setState({ saturation: +event.target.value });
+
+  win.onBrightnessChange = (event) =>
+    win.setState({ brightness: +event.target.value });
+
+  win.onSegmentsChange = (event) =>
+    win.setState({ segments: +event.target.value });
 
   return (
     <div className="Input-Container">
@@ -20,7 +28,19 @@ function getInputs(win) {
           label={"Saturation:"}
           bounds={{ min: 0, max: 255, step: 1 }}
           value={win.state.saturation}
-          onChange={win.onSliderChange}
+          onChange={win.onSaturationChange}
+        />
+        <Slider
+          label={"Brightness:"}
+          bounds={{ min: 0, max: 255, step: 1 }}
+          value={win.state.brightness}
+          onChange={win.onBrightnessChange}
+        />
+        <Slider
+          label={"Segments:"}
+          bounds={{ min: 6, max: 60, step: 6 }}
+          value={win.state.segments}
+          onChange={win.onSegmentsChange}
         />
       </div>
     </div>
@@ -34,19 +54,16 @@ function sketch(_p5) {
     _p5.noStroke();
     _p5.colorMode(_p5.HSB, 360, _p5.width, _p5.height);
     _p5.radius = _p5.height / 2 - 50;
-    _p5.segmentCount = 24;
   };
 
   _p5.draw = function () {
-    const saturationOverride = _p5.map(
-      _p5.props.saturation,
-      0,
-      255,
-      0,
-      _p5.width
-    );
+    const saturation = _p5.map(_p5.props.saturation, 0, 255, 0, _p5.width);
+    const brightness = _p5.map(_p5.props.brightness, 0, 255, 0, _p5.width);
+    const segments = _p5.map(_p5.props.sgements, 0, 255, 0, 255);
 
-    _p5.step = 360 / _p5.segmentCount;
+    _p5.step = 360 / _p5.props.segments;
+    console.log(_p5.step);
+
     _p5.background(0);
     _p5.noStroke();
     // Begins a triangle fan
@@ -61,34 +78,12 @@ function sketch(_p5) {
       _p5.vertex(vx, vy);
 
       let h = angle;
-      let s = saturationOverride != null ? saturationOverride : _p5.mouseX;
-      let b = _p5.mouseY;
+      let s = saturation;
+      let b = brightness;
 
       _p5.fill(h, s, b);
     }
     _p5.endShape();
-  };
-
-  _p5.keyReleased = function (e) {
-    switch (e.key) {
-      case "1":
-        _p5.segmentCount = 360;
-        break;
-      case "2":
-        _p5.segmentCount = 45;
-        break;
-      case "3":
-        _p5.segmentCount = 24;
-        break;
-      case "4":
-        _p5.segmentCount = 12;
-        break;
-      case "5":
-        _p5.segmentCount = 6;
-        break;
-      default:
-        _p5.segmentCount = 24;
-    }
   };
 }
 
