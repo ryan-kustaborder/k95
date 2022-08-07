@@ -6,6 +6,7 @@ import FolderFileIcon from "../../k95/fileIcons/FolderFileIcon";
 import PhotoFileIcon from "../../k95/fileIcons/PhotoFileIcon";
 import P5FileIcon from "../../k95/fileIcons/P5FileIcon";
 import { HSBCircle } from "../../sketches/HSBCircle";
+import HSBGrid from "../../sketches/HSBGrid";
 
 export default class GalleryFolder extends Component {
   render() {
@@ -35,6 +36,18 @@ export default class GalleryFolder extends Component {
           sketch={HSBCircle.sketch}
           initState={HSBCircle.initState}
           getInputs={HSBCircle.getInputs}
+        ></P5FileIcon>
+        <P5FileIcon
+          onAddWindow={this.props.onAddWindow}
+          onRemoveWindow={this.props.onRemoveWindow}
+          onSelectWindow={this.props.onSelectWindow}
+          title={HSBGrid.title}
+          useDarkText={true}
+          width={HSBGrid.width}
+          height={HSBGrid.height}
+          sketch={HSBGrid.sketch}
+          initState={HSBGrid.initState}
+          getInputs={HSBGrid.getInputs}
         ></P5FileIcon>
       </FolderFileIcon>
     );

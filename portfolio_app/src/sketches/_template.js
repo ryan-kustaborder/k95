@@ -21,19 +21,15 @@ function sketch(_p5) {
   _p5.draw = function () {
     // Draws every frame
   };
-
-  _p5.keyReleased = function (e) {
-    // Delete this if no key input needed
-    switch (e.key) {
-    }
-  };
 }
 
 // Rename const to sketch name
-export const _template = {
+const _template = {
   sketch: sketch,
   title: title,
   size: size,
   initState: initState,
   getInputs: getInputs,
 };
+
+export default _template;
