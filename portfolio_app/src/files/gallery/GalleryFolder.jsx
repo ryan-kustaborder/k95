@@ -8,6 +8,23 @@ import P5FileIcon from "../../k95/fileIcons/P5FileIcon";
 import HSBCircle from "../../sketches/HSBCircle";
 import HSBGrid from "../../sketches/HSBGrid";
 
+function _P5IconFromSketch(sketch, parent) {
+  return (
+    <P5FileIcon
+      onAddWindow={parent.props.onAddWindow}
+      onRemoveWindow={parent.props.onRemoveWindow}
+      onSelectWindow={parent.props.onSelectWindow}
+      title={sketch.title}
+      useDarkText={true}
+      width={sketch.width}
+      height={sketch.height}
+      sketch={sketch.sketch}
+      initState={sketch.initState}
+      getInputs={sketch.getInputs}
+    ></P5FileIcon>
+  );
+}
+
 export default class GalleryFolder extends Component {
   render() {
     return (
@@ -25,30 +42,9 @@ export default class GalleryFolder extends Component {
           useDarkText={true}
           image={_rug}
         ></PhotoFileIcon>
-        <P5FileIcon
-          onAddWindow={this.props.onAddWindow}
-          onRemoveWindow={this.props.onRemoveWindow}
-          onSelectWindow={this.props.onSelectWindow}
-          title={HSBCircle.title}
-          useDarkText={true}
-          width={HSBCircle.width}
-          height={HSBCircle.height}
-          sketch={HSBCircle.sketch}
-          initState={HSBCircle.initState}
-          getInputs={HSBCircle.getInputs}
-        ></P5FileIcon>
-        <P5FileIcon
-          onAddWindow={this.props.onAddWindow}
-          onRemoveWindow={this.props.onRemoveWindow}
-          onSelectWindow={this.props.onSelectWindow}
-          title={HSBGrid.title}
-          useDarkText={true}
-          width={HSBGrid.width}
-          height={HSBGrid.height}
-          sketch={HSBGrid.sketch}
-          initState={HSBGrid.initState}
-          getInputs={HSBGrid.getInputs}
-        ></P5FileIcon>
+
+        {_P5IconFromSketch(HSBCircle, this)}
+        {_P5IconFromSketch(HSBGrid, this)}
       </FolderFileIcon>
     );
   }

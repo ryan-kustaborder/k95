@@ -59,10 +59,8 @@ function sketch(_p5) {
   _p5.draw = function () {
     const saturation = _p5.map(_p5.props.saturation, 0, 255, 0, _p5.width);
     const brightness = _p5.map(_p5.props.brightness, 0, 255, 0, _p5.width);
-    const segments = _p5.map(_p5.props.sgements, 0, 255, 0, 255);
 
     _p5.step = 360 / _p5.props.segments;
-    console.log(_p5.step);
 
     _p5.background(0);
     _p5.noStroke();
