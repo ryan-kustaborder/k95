@@ -1,7 +1,7 @@
 import React from "react";
 import FileIcon from "./FileIcon";
 import PhotoWindow from "../windows/PhotoWindow";
-import PHOTO_ICON from "../../icons/display.png";
+import PHOTO_ICON from "../../icons/photo.png";
 
 export default class PhotoFileIcon extends FileIcon {
   onDoubleClick() {
