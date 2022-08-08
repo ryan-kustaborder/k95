@@ -2,15 +2,28 @@ import React from "react";
 import Window from "./Window";
 import ResizeWrapper from "../wrappers/ResizableWrapper";
 import ScrollableWrapper from "../wrappers/ScrollableWrapper";
-import BlankContainer from "../wrappers/BlankContainer";
 
 import json from "../../documents/booklet/booklet.json";
 
 export default class PDFWindow extends Window {
+  constructor(props) {
+    super(props);
+
+    this.paths = [];
+
+    for (let i = 1; i <= json.length; i++) {
+      this.paths.push("_" + i + ".png");
+    }
+  }
+
   getInnerContent() {
-    let pages = json.pages.map((path) => {
+    let pages = this.paths.map((path) => {
       return (
-        <img src={`${process.env.PUBLIC_URL}/documents/booklet/${path}`}></img>
+        <img
+          key={json.folder + "/" + path}
+          src={`${process.env.PUBLIC_URL}/documents/${json.folder}/${path}`}
+          alt="pdf page"
+        ></img>
       );
     });
 
