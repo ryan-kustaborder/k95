@@ -6,26 +6,19 @@ import BlankContainer from "../wrappers/BlankContainer";
 
 import json from "../../documents/booklet/booklet.json";
 
-const DOCUMENTS_PATH = "portfolio_app/src/documents/";
-
 export default class PDFWindow extends Window {
-  constructor(props) {
-    super(props);
-
-    console.log(json);
-    this.path = `${process.env.PUBLIC_URL}/documents/booklet/_.png`;
-
-    console.log(this.path);
-  }
-
   getInnerContent() {
+    let pages = json.pages.map((path) => {
+      return (
+        <img src={`${process.env.PUBLIC_URL}/documents/booklet/${path}`}></img>
+      );
+    });
+
     return (
       <ResizeWrapper onCloseWindow={() => {}}>
-        <ScrollableWrapper>
-          <BlankContainer>
-            <img src={this.path} />
-          </BlankContainer>
-        </ScrollableWrapper>
+        <div className="pdf">
+          <ScrollableWrapper>{pages}</ScrollableWrapper>
+        </div>
       </ResizeWrapper>
     );
   }

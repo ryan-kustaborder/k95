@@ -20,3 +20,19 @@
       user-select: none;
     }
   }
+
+  .pdf {
+    &>.scrollable {
+      margin: 8px;
+      padding: 16px 64px;
+      background: var(--medium-gray);
+      width: auto;
+      flex-direction: column;
+
+      &>img {
+        background-color: white;
+        margin-bottom: 64px;
+      }
+    }
+
+  }
