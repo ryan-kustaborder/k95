@@ -7,7 +7,11 @@ export default class Clock extends Component {
   }
 
   render() {
-    return <div className="Clock">{this.state.time}</div>;
+    return (
+      <div className="Clock">
+        <p>{this.state.time}</p>
+      </div>
+    );
   }
 
   updateTime() {

@@ -19,6 +19,7 @@ export default class Desktop extends Component {
     if (this.state.selected) {
       this.state.selected.setState({ selected: false });
     }
+    console.log(window);
     window.setState({ selected: true });
 
     this.setState({ selected: window });
@@ -49,7 +50,7 @@ export default class Desktop extends Component {
 
   render() {
     const tabs = this.state.windows.map((window) => (
-      <FooterTab title={window.props.title} />
+      <FooterTab window={window} desktop={this} />
     ));
 
     return (
@@ -123,9 +124,10 @@ export default class Desktop extends Component {
               );
             }}
           >
-            Start
+            <p>Start</p>
           </button>
-          {tabs}
+
+          <div className="footer-tabs">{tabs}</div>
           <Clock />
         </div>
       </div>
