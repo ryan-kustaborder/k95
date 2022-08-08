@@ -4,18 +4,27 @@ import ResizeWrapper from "../wrappers/ResizableWrapper";
 import ScrollableWrapper from "../wrappers/ScrollableWrapper";
 import BlankContainer from "../wrappers/BlankContainer";
 
+import json from "../../documents/booklet/booklet.json";
+
+const DOCUMENTS_PATH = "portfolio_app/src/documents/";
+
 export default class PDFWindow extends Window {
   constructor(props) {
     super(props);
 
-    //getDocument("helloworld.pdf");
+    console.log(json);
+    this.path = `${process.env.PUBLIC_URL}/documents/booklet/_.png`;
+
+    console.log(this.path);
   }
 
   getInnerContent() {
     return (
       <ResizeWrapper onCloseWindow={() => {}}>
         <ScrollableWrapper>
-          <BlankContainer>pdf window</BlankContainer>
+          <BlankContainer>
+            <img src={this.path} />
+          </BlankContainer>
         </ScrollableWrapper>
       </ResizeWrapper>
     );
