@@ -18,6 +18,11 @@
       padding: 2px;
       color: var(--white);
       user-select: none;
+
+      &>button {
+        padding: 0;
+        width: 24px;
+      }
     }
   }
 
