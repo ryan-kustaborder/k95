@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import _rug from "./rug.jpg";
+import GALLERY_ICON from "../../icons/photo-album.png";
 
 import FolderFileIcon from "../../k95/fileIcons/FolderFileIcon";
 import PhotoFileIcon from "../../k95/fileIcons/PhotoFileIcon";
@@ -35,6 +36,7 @@ export default class GalleryFolder extends Component {
         onRemoveWindow={this.props.onRemoveWindow}
         onSelectWindow={this.props.onSelectWindow}
         title={"Gallery"}
+        icon={GALLERY_ICON}
       >
         <PhotoFileIcon
           onAddWindow={this.props.onAddWindow}

@@ -23,6 +23,9 @@ export default class FolderFileIcon extends FileIcon {
   }
 
   getIcon() {
+    if (this.props.icon) {
+      return this.props.icon;
+    }
     return ICON;
   }
 }

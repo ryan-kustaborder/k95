@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import ACCESSIBILITY_ICON from "./icons/accesibility.png";
+import SETTINGS_ICON from "./icons/settings.png";
+import GLOBE_ICON from "./icons/globe.png";
+
 import FooterTab from "./k95/FooterTab";
 import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
 import GalleryFolder from "./files/gallery/GalleryFolder";
@@ -70,7 +74,6 @@ export default class Desktop extends Component {
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
-          title={"Gallery"}
         />
 
         <ContactFile
@@ -94,6 +97,7 @@ export default class Desktop extends Component {
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
           title={"Settings"}
+          icon={SETTINGS_ICON}
         />
 
         <div className="blank-4"></div>
@@ -103,6 +107,7 @@ export default class Desktop extends Component {
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
           title={"Accesibility"}
+          icon={ACCESSIBILITY_ICON}
         />
 
         <FolderFileIcon
@@ -110,6 +115,7 @@ export default class Desktop extends Component {
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
           title={"Websites"}
+          icon={GLOBE_ICON}
         />
 
         {this.state.windows}
