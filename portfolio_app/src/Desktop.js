@@ -4,7 +4,6 @@ import FooterTab from "./k95/FooterTab";
 import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
 import GalleryFolder from "./files/gallery/GalleryFolder";
 import Clock from "./k95/Clock";
-import PDFFileIcon from "./k95/fileIcons/PDFFileIcon";
 
 export default class Desktop extends Component {
   constructor(props) {
@@ -56,13 +55,6 @@ export default class Desktop extends Component {
     return (
       <div className="Desktop">
         <div className="blank-6"></div>
-
-        <PDFFileIcon
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          title={"PDF"}
-        ></PDFFileIcon>
 
         <FolderFileIcon
           onAddWindow={this.addWindow.bind(this)}

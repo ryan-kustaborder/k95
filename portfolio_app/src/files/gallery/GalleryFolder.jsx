@@ -5,6 +5,8 @@ import _rug from "./rug.jpg";
 import FolderFileIcon from "../../k95/fileIcons/FolderFileIcon";
 import PhotoFileIcon from "../../k95/fileIcons/PhotoFileIcon";
 import P5FileIcon from "../../k95/fileIcons/P5FileIcon";
+import PDFFileIcon from "../../k95/fileIcons/PDFFileIcon";
+
 import HSBCircle from "../../sketches/HSBCircle";
 import HSBGrid from "../../sketches/HSBGrid";
 
@@ -45,6 +47,14 @@ export default class GalleryFolder extends Component {
 
         {_P5IconFromSketch(HSBCircle, this)}
         {_P5IconFromSketch(HSBGrid, this)}
+
+        <PDFFileIcon
+          onAddWindow={this.props.onAddWindow}
+          onRemoveWindow={this.props.onRemoveWindow}
+          onSelectWindow={this.props.onSelectWindow}
+          title={"booklet.pdf"}
+          useDarkText={true}
+        ></PDFFileIcon>
       </FolderFileIcon>
     );
   }
