@@ -9,6 +9,7 @@ import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
 import GalleryFolder from "./files/gallery/GalleryFolder";
 import Clock from "./k95/Clock";
 import ContactFile from "./files/about/ContactFile";
+import BrowserFileIcon from "./k95/fileIcons/BrowserFIleIcon";
 
 export default class Desktop extends Component {
   constructor(props) {
@@ -110,7 +111,7 @@ export default class Desktop extends Component {
           icon={ACCESSIBILITY_ICON}
         />
 
-        <FolderFileIcon
+        <BrowserFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
