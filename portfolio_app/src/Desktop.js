@@ -55,7 +55,11 @@ export default class Desktop extends Component {
 
   render() {
     const tabs = this.state.windows.map((window) => (
-      <FooterTab window={window} desktop={this} />
+      <FooterTab
+        window={window}
+        key={"Tab = " + window.props.title}
+        desktop={this}
+      />
     ));
 
     return (
@@ -111,13 +115,22 @@ export default class Desktop extends Component {
           icon={ACCESSIBILITY_ICON}
         />
 
-        <BrowserFileIcon
+        <FolderFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
           onSelectWindow={this.selectWindow.bind(this)}
-          title={"Websites"}
+          title={"Site Demos"}
           icon={GLOBE_ICON}
-        />
+        >
+          <BrowserFileIcon
+            onAddWindow={this.addWindow.bind(this)}
+            onRemoveWindow={this.removeWindow.bind(this)}
+            onSelectWindow={this.selectWindow.bind(this)}
+            title={"Accessibility Matters"}
+            useDarkText={true}
+            url="http://eecs.csuohio.edu/~rykustab/project1"
+          />
+        </FolderFileIcon>
 
         {this.state.windows}
 

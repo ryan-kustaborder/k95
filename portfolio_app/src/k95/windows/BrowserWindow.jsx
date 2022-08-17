@@ -3,11 +3,12 @@ import Window from "./Window";
 import ResizeWrapper from "../wrappers/ResizableWrapper";
 import BlankContainer from "../wrappers/BlankContainer";
 
-export default class PhotoWindow extends Window {
+export default class BrowserWindow extends Window {
   getInnerContent() {
+    window.open("https://www.codexworld.com", "_blank");
     return (
       <ResizeWrapper onCloseWindow={() => {}}>
-        <BlankContainer>Browser Window</BlankContainer>
+        <BlankContainer>{this.props.children}</BlankContainer>
       </ResizeWrapper>
     );
   }
