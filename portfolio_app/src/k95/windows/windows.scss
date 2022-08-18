@@ -9,7 +9,7 @@
   
     .window-header {
       width: calc(100% - 5px);
-      height: 24px;
+      height: 32px;
       background-color: var(--blue);
       margin-bottom: 5px;
       display: flex;
@@ -21,7 +21,12 @@
 
       &>button {
         padding: 0;
-        width: 24px;
+        width: 32px;
+      }
+
+      &>p {
+        font-size: 24px;
+        margin-left: 8px;
       }
     }
   }
