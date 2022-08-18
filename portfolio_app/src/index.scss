@@ -11,8 +11,8 @@
 
 .blank-container {
   background-color: var(--white);
-  width: 100%;
   flex-grow: 2;
+  margin: 2px;
 }
 
 button {
@@ -63,12 +63,15 @@ button {
 }
 
 .file-grid {
-  height: 100%;
-  width: 100%;
+  padding: 16px;
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
+
+  &>.file-icon {
+    margin-right: 16px;
+  }
 }
 
 .control-set {
