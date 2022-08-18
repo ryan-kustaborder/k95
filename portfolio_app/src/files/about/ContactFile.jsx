@@ -1,11 +1,15 @@
 import React from "react";
 import FileIcon from "../../k95/fileIcons/FileIcon";
-import ICON from "../../icons/phone.png";
 import Window from "../../k95/windows/Window";
 import BlankContainer from "../../k95/wrappers/BlankContainer";
 
+import ICON from "../../icons/phone.png";
+import EMAIL_ICON from "../../icons/email.png";
+import LINKEDIN_ICON from "../../icons/linkedin.png";
+
 import "./about.scss";
 import PDFFileIcon from "../../k95/fileIcons/PDFFileIcon";
+import LinkFileIcon from "../../k95/fileIcons/LinkFileIcon";
 
 export default class ContactFile extends FileIcon {
   onDoubleClick() {
@@ -19,19 +23,26 @@ export default class ContactFile extends FileIcon {
         >
           <BlankContainer>
             <div className="contact">
-              <h2>Phone: </h2> <a href="tel:814-571-8183">814-571-8183</a>
-              <h2>Email: </h2>
-              <a href="mailto: ryan.kustaborder@gmail.com">
-                ryan.kustaborder@gmail.com
-              </a>
-              <h2>Linkedin: </h2>
-              <a
-                href="https://www.linkedin.com/in/ryan-kustaborder-0822561a0"
-                target="_blank"
-                rel="noreferrer"
-              >
-                linkedin.com/in/ryan-kustaborder-0822561a0
-              </a>
+              <LinkFileIcon
+                onAddWindow={this.props.onAddWindow}
+                onRemoveWindow={this.props.onRemoveWindow}
+                onSelectWindow={this.props.onSelectWindow}
+                title={"Email"}
+                useDarkText={true}
+                icon={EMAIL_ICON}
+                url="mailto: ryan.kustaborder@gmail.com"
+              />
+
+              <LinkFileIcon
+                onAddWindow={this.props.onAddWindow}
+                onRemoveWindow={this.props.onRemoveWindow}
+                onSelectWindow={this.props.onSelectWindow}
+                title={"LinkedIn"}
+                useDarkText={true}
+                icon={LINKEDIN_ICON}
+                url="https://www.linkedin.com/in/ryan-kustaborder"
+              />
+
               <PDFFileIcon
                 onAddWindow={this.props.onAddWindow}
                 onRemoveWindow={this.props.onRemoveWindow}
