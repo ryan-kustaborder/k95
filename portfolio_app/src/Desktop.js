@@ -64,8 +64,6 @@ export default class Desktop extends Component {
 
     return (
       <div className="Desktop">
-        <div className="blank-6"></div>
-
         <FolderFileIcon
           onAddWindow={this.addWindow.bind(this)}
           onRemoveWindow={this.removeWindow.bind(this)}
