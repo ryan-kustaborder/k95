@@ -1,15 +1,15 @@
 import React from "react";
-import FileIcon from "../../k95/fileIcons/FileIcon";
-import Window from "../../k95/windows/Window";
-import BlankContainer from "../../k95/wrappers/BlankContainer";
+import FileIcon from "../k95/fileIcons/FileIcon";
+import Window from "../k95/windows/Window";
+import BlankContainer from "../k95/wrappers/BlankContainer";
 
-import ICON from "../../icons/phone.png";
-import EMAIL_ICON from "../../icons/email.png";
-import LINKEDIN_ICON from "../../icons/linkedin.png";
-import GITHUB_ICON from "../../icons/github.png";
+import ICON from "../icons/phone.png";
+import EMAIL_ICON from "../icons/email.png";
+import LINKEDIN_ICON from "../icons/linkedin.png";
+import GITHUB_ICON from "../icons/github.png";
 
-import PDFFileIcon from "../../k95/fileIcons/PDFFileIcon";
-import LinkFileIcon from "../../k95/fileIcons/LinkFileIcon";
+import PDFFileIcon from "../k95/fileIcons/PDFFileIcon";
+import LinkFileIcon from "../k95/fileIcons/LinkFileIcon";
 
 export default class ContactFile extends FileIcon {
     onDoubleClick() {
