@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import GLOBE_ICON from "./icons/globe.png";
 import BOOK_ICON from "./icons/book.png";
+import CONE from "./icons/cone.png";
 
 import FooterTab from "./k95/FooterTab";
 import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
@@ -90,7 +91,22 @@ export default class Desktop extends Component {
             onRemoveWindow={this.removeWindow.bind(this)}
             onSelectWindow={this.selectWindow.bind(this)}
             title={"Games"}
-          />
+          >
+            <div
+              style={{
+                marginTop: "16px",
+                width: "100%",
+                height: "300px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img src={CONE}></img>
+              <h1>Coming Soon</h1>
+            </div>
+          </FolderFileIcon>
 
           <FolderFileIcon
             onAddWindow={this.addWindow.bind(this)}

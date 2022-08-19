@@ -27,4 +27,14 @@
     &.dark p {
       color: var(--black);
     }
+
+    &:hover {
+      &.dark img {
+        filter: drop-shadow(0px 0px 5px #000000);
+      }
+
+      img {
+          filter: drop-shadow(0px 0px 5px #FFFFFF);
+      }
+  }
   }
