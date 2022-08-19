@@ -2,62 +2,174 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Levi Windows';
-  }
+    font-family: "Levi Windows";
+}
 
-  /* Base Tags */
-  img {
+/* Base Tags */
+img {
     object-fit: contain;
     height: 100%;
     width: 100%;
-  }
-  
-  p {
-    font-size: var(--p_size);
-  }
+}
 
-  /* Desktop */
-  .Desktop {
+p {
+    font-size: var(--p_size);
+}
+
+/* Desktop */
+.Desktop {
     height: 100vh;
     background-color: #008081;
     display: flex;
-      align-items: center;
-      justify-content: center;
+    align-items: center;
+    justify-content: center;
 
     .desktop-icons {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
 
-      &>.file-icon {
-        margin-bottom: 16px;
-        width: 30%;
-      }
+        & > .file-icon {
+            margin-bottom: 16px;
+            width: 30%;
+        }
     }
-  }
+}
 
-
-  /* Borders */
-  .in {
+/* Borders */
+.in {
     border-left: 2px solid var(--shadow);
     border-top: 2px solid var(--shadow);
     border-right: 2px solid var(--highlight);
     border-bottom: 2px solid var(--highlight);
-  }
-  
-  .out {
+}
+
+.out {
     border-left: 2px solid var(--highlight);
     border-top: 2px solid var(--highlight);
     border-right: 2px solid var(--shadow);
     border-bottom: 2px solid var(--shadow);
-  }
+}
 
-  /* Layout */
-  .vertical-layout {
+/* Layout */
+.vertical-layout {
     display: flex;
     flex-direction: column;
     width: 100%;
-      overflow: hidden;
-  }
+    overflow: hidden;
+}
+
+/* File Icons */
+.file-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+
+    img {
+        height: 30vh;
+        user-select: none;
+
+        /* Disable selecting of image */
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    p {
+        color: white;
+        font-size: 48px;
+        text-align: center;
+        margin-top: -20px;
+    }
+
+    &.dark p {
+        color: var(--black);
+    }
+
+    &:hover {
+        &.dark img {
+            filter: drop-shadow(0px 0px 5px #000000);
+        }
+
+        img {
+            filter: drop-shadow(0px 0px 5px #ffffff);
+        }
+    }
+}
+
+// Windows
+.window {
+    min-width: 300px;
+    min-height: 200px;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .window-header {
+        width: calc(100% - 5px);
+        height: 32px;
+        background-color: var(--blue);
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px;
+        color: var(--white);
+        user-select: none;
+
+        & > button {
+            padding: 0;
+            width: 32px;
+        }
+
+        & > p {
+            font-size: 24px;
+            margin-left: 8px;
+        }
+    }
+}
+
+// PDF
+.pdf {
+    & > .scrollable {
+        margin: 8px;
+        padding: 16px 64px;
+        background: var(--medium-gray);
+        width: auto;
+        flex-direction: column;
+
+        & > img {
+            background-color: white;
+            margin-bottom: 64px;
+        }
+    }
+}
+
+/*
+*     Individual Components
+*/
+
+// Contact Folder
+.contact {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+    padding: 16px;
+
+    .file-icon {
+        img {
+            height: 20vh;
+        }
+        p {
+            font-size: 32px;
+            margin-top: 0;
+        }
+    }
+}
