@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import GLOBE_ICON from "./icons/globe.png";
+import BOOK_ICON from "./icons/book.png";
 
 import FooterTab from "./k95/FooterTab";
 import FolderFileIcon from "./k95/fileIcons/FolderFileIcon";
@@ -68,6 +69,7 @@ export default class Desktop extends Component {
             onRemoveWindow={this.removeWindow.bind(this)}
             onSelectWindow={this.selectWindow.bind(this)}
             title={"About"}
+            icon={BOOK_ICON}
           />
 
           <GalleryFolder
