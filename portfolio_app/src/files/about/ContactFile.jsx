@@ -6,6 +6,7 @@ import BlankContainer from "../../k95/wrappers/BlankContainer";
 import ICON from "../../icons/phone.png";
 import EMAIL_ICON from "../../icons/email.png";
 import LINKEDIN_ICON from "../../icons/linkedin.png";
+import GITHUB_ICON from "../../icons/github.png";
 
 import "./about.scss";
 import PDFFileIcon from "../../k95/fileIcons/PDFFileIcon";
@@ -49,6 +50,16 @@ export default class ContactFile extends FileIcon {
                 onSelectWindow={this.props.onSelectWindow}
                 title={"resume.pdf"}
                 useDarkText={true}
+              />
+
+              <LinkFileIcon
+                onAddWindow={this.props.onAddWindow}
+                onRemoveWindow={this.props.onRemoveWindow}
+                onSelectWindow={this.props.onSelectWindow}
+                title={"Github"}
+                useDarkText={true}
+                icon={GITHUB_ICON}
+                url="https://github.com/ryan-kustaborder"
               />
             </div>
           </BlankContainer>
