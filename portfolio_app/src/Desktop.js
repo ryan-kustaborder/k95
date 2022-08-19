@@ -103,7 +103,7 @@ export default class Desktop extends Component {
                                 justifyContent: "center",
                             }}
                         >
-                            <img src={CONE}></img>
+                            <img src={CONE} alt="Traffic Cone"></img>
                             <h1>Coming Soon</h1>
                         </div>
                     </FolderFileIcon>
