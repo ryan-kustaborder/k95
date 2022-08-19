@@ -18,34 +18,23 @@
 
   /* Desktop */
   .Desktop {
-    display: grid;
-    grid-template-rows: 22vh 22vh 22vh 22vh;
-    grid-template-columns: 22vh 22vh 22vh 22vh 22vh 22vh;
     height: 100vh;
     background-color: #008081;
+    display: flex;
+      align-items: center;
+      justify-content: center;
 
-    .blank-1 {
-      grid-column: span 1;
-    }
+    .desktop-icons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 60%;
 
-    .blank-2 {
-      grid-column: span 2;
-    }
-
-    .blank-3 {
-      grid-column: span 3;
-    }
-
-    .blank-4 {
-      grid-column: span 4;
-    }
-
-    .blank-5 {
-      grid-column: span 5;
-    }
-
-    .blank-6 {
-      grid-column: span 6;
+      &>.file-icon {
+        margin-bottom: 16px;
+        width: 30%;
+      }
     }
   }
 

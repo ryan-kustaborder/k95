@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import ACCESSIBILITY_ICON from "./icons/accesibility.png";
-import SETTINGS_ICON from "./icons/settings.png";
 import GLOBE_ICON from "./icons/globe.png";
 
 import FooterTab from "./k95/FooterTab";
@@ -64,71 +62,51 @@ export default class Desktop extends Component {
 
     return (
       <div className="Desktop">
-        <FolderFileIcon
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          title={"About"}
-        />
-
-        <div className="blank-5"></div>
-
-        <GalleryFolder
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-        />
-
-        <ContactFile
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          title={"Contact"}
-        />
-
-        <div className="blank-4"></div>
-
-        <FolderFileIcon
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          title={"Games"}
-        />
-
-        <FolderFileIcon
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          title={"Settings"}
-          icon={SETTINGS_ICON}
-        />
-
-        <div className="blank-4"></div>
-
-        <FolderFileIcon
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          title={"Accesibility"}
-          icon={ACCESSIBILITY_ICON}
-        />
-
-        <FolderFileIcon
-          onAddWindow={this.addWindow.bind(this)}
-          onRemoveWindow={this.removeWindow.bind(this)}
-          onSelectWindow={this.selectWindow.bind(this)}
-          title={"Site Demos"}
-          icon={GLOBE_ICON}
-        >
-          <LinkFileIcon
+        <div className="desktop-icons">
+          <FolderFileIcon
             onAddWindow={this.addWindow.bind(this)}
             onRemoveWindow={this.removeWindow.bind(this)}
             onSelectWindow={this.selectWindow.bind(this)}
-            title={"Accessibility Matters"}
-            useDarkText={true}
-            url="http://eecs.csuohio.edu/~rykustab/project1"
+            title={"About"}
           />
-        </FolderFileIcon>
+
+          <GalleryFolder
+            onAddWindow={this.addWindow.bind(this)}
+            onRemoveWindow={this.removeWindow.bind(this)}
+            onSelectWindow={this.selectWindow.bind(this)}
+          />
+
+          <ContactFile
+            onAddWindow={this.addWindow.bind(this)}
+            onRemoveWindow={this.removeWindow.bind(this)}
+            onSelectWindow={this.selectWindow.bind(this)}
+            title={"Contact"}
+          />
+
+          <FolderFileIcon
+            onAddWindow={this.addWindow.bind(this)}
+            onRemoveWindow={this.removeWindow.bind(this)}
+            onSelectWindow={this.selectWindow.bind(this)}
+            title={"Games"}
+          />
+
+          <FolderFileIcon
+            onAddWindow={this.addWindow.bind(this)}
+            onRemoveWindow={this.removeWindow.bind(this)}
+            onSelectWindow={this.selectWindow.bind(this)}
+            title={"Web Demos"}
+            icon={GLOBE_ICON}
+          >
+            <LinkFileIcon
+              onAddWindow={this.addWindow.bind(this)}
+              onRemoveWindow={this.removeWindow.bind(this)}
+              onSelectWindow={this.selectWindow.bind(this)}
+              title={"Accessibility Matters"}
+              useDarkText={true}
+              url="http://eecs.csuohio.edu/~rykustab/project1"
+            />
+          </FolderFileIcon>
+        </div>
 
         {this.state.windows}
 

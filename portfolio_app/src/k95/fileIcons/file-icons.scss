@@ -5,7 +5,7 @@
     user-select: none;
   
     img {
-      height: 128px;
+      height: 30vh;
       user-select: none;
       
       /* Disable selecting of image */
@@ -19,8 +19,9 @@
   
     p {
       color: white;
-      font-size: 24px;
+      font-size: 48px;
       text-align: center;
+      margin-top: -20px;
     }
   
     &.dark p {
